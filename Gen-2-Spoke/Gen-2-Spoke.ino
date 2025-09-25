@@ -10,18 +10,24 @@
 #include <Adafruit_Sensor.h>
 #include "Adafruit_BMP3XX.h"
 
-#define SCL_PIN 6
-#define SDA_PIN 7
+#define SCL_PIN 7
+#define SDA_PIN 6
 #define SEALEVELPRESSURE_HPA (1013.25)  // FIXME: Adjust properly
 
 // Sensors
 Adafruit_BMP3XX bmp388;
 
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(115200);
+  Wire.begin(SDA_PIN, SCL_PIN);
+
+  // BMP388 Init:
+  if(!bmp388.begin_I2C()){
+    Serial.println("Could not find BMP388 sensor");
+  }
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+
 }
