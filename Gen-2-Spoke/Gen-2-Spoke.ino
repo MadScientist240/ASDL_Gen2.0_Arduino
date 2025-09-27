@@ -9,9 +9,11 @@
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include "Adafruit_BMP3XX.h"
+#include <SensirionI2cScd4x.h>
 
 // Sensors
 Adafruit_BMP3XX bmp388;
+SensirionI2cScd4x scd40;
 
 // Sensor Structures
 typedef struct {
@@ -36,6 +38,13 @@ config_struct config = {5, true, true};
 #define SDA_PIN 6
 #define SEALEVELPRESSURE_HPA (1013.25)  // FIXME: Adjust properly
 
+// SCD40 variables
+static int16_t error;
+uint64_t serialNumber = 0;
+bool dataReady = 0;
+uint16_t co2Concentration
+float temperature
+float relativeHumidity
 
 
 void setup() {
@@ -48,6 +57,14 @@ void setup() {
   } else {
     Serial.println("BMP388 is disabled in config");
   }
+
+  // SCD40 Init:
+  if(config.scd_enabled){
+    scd_init();
+  } else {
+    Serial.println("SCD40 is diasbled in config");
+  }
+
   
 }
 
@@ -95,5 +112,59 @@ bool bmp_read(){
 
     Serial.println();
   }
+  return true;
+}
+
+bool scd_init(){
+  scd40.begin(Wire, SCD41_I2C_ADDR_62);
+
+  error = scd40.wakeUp();
+  if(error != 0){
+    Serial.println("Error trying to wake up SCD40");
+    return false;
+  }
+
+  error = scd40.stopPeriodicMeasurement();
+  if(error != 0){
+    Serial.println("Error trying to stop SCD40 periodic measurements");
+    return false;
+  }
+
+  error = scd40.reinit();
+  if(error != 0){
+    Serial.println("Error trying to reinit SCD40");
+    return false;
+  }
+  
+  error = scd40.getSerialNumber(serialNumber);
+  if(error != 0){
+    Serial.println("Error trying to get SCD40 serial number");
+    return false;
+  }
+
+  error = scd40.startPeriodicMeasurement();
+  if(error != 0){
+    Serial.println("Error trying to start SCD40 periodic measurements");
+    return false;
+  }
+  return true;
+}
+
+bool scd_read(){
+  error = sensor.getDataReady(dataReady);
+  if(error != 0){
+    Serial.print("Error trying to get SCD40 data ready status");
+    return false;
+  }
+
+  error = scd40.readMeasurement(co2Concentration, temperature, relativeHumidity);
+  if(error != 0){
+    Serial.print("Error trying to read SCD40 measurement");
+    return false;
+  }
+
+  data.co2 = co2Concentration;
+  data.humidity = hrelativeHumidity;s
+  
   return true;
 }
