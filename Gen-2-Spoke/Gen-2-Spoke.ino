@@ -41,10 +41,10 @@ config_struct config = {5, true, true};
 // SCD40 variables
 static int16_t error;
 uint64_t serialNumber = 0;
-bool dataReady = 0;
-uint16_t co2Concentration
-float temperature
-float relativeHumidity
+bool dataReady = false;
+uint16_t co2Concentration;
+float temperature;
+float relativeHumidity;
 
 
 void setup() {
@@ -150,8 +150,8 @@ bool scd_init(){
   return true;
 }
 
-bool scd_read(){
-  error = sensor.getDataReady(dataReady);
+bool scd_ready(){
+  error = scd40.getDataReadyStatus(dataReady);
   if(error != 0){
     Serial.print("Error trying to get SCD40 data ready status");
     return false;
@@ -164,7 +164,17 @@ bool scd_read(){
   }
 
   data.co2 = co2Concentration;
-  data.humidity = hrelativeHumidity;s
-  
+  data.humidity = relativeHumidity;
+
+  Serial.print("CO2 concentration [ppm]: ");
+  Serial.print(data.co2);
+  Serial.println();
+  Serial.print("Temperature [°C]: ");
+  Serial.print(data.temperature);
+  Serial.println();
+  Serial.print("Relative Humidity [RH]: ");
+  Serial.print(data.humidity);
+  Serial.println();
+
   return true;
 }
