@@ -62,19 +62,20 @@ void setup() {
   if(config.scd_enabled){
     scd_init();
   } else {
-    Serial.println("SCD40 is diasbled in config");
+    Serial.println("SCD40 is disabled in config");
   }
 }
 
 void loop() {
   delay(config.sample_rate * 1000);
+    if(config.scd_enabled){
+    scd_read();
+  }
   if(config.bmp_enabled){
     bmp_read();
   }
 
-  if(config.scd_enabled){
-    scd_read();
-  }
+  print_data();
 }
 
 bool bmp_init(){
@@ -96,18 +97,22 @@ bool bmp_read(){
     Serial.println("BMP388 Reading Failed");
     return false;
   } else {
-    Serial.println("=========== BMP388 ===========");
 
-    data.temperature = bmp388.temperature;
     data.pressure = bmp388.pressure / 100.0;
     data.altitude = bmp388.readAltitude(SEALEVELPRESSURE_HPA);
 
+    // Get temp from SCD40 BY DEFAULT, else rely on BMP388
+    if(error !=  0 || !config.scd_enabled){ 
+      data.temperature = bmp388.temperature;
+    }
+    /*
+    Serial.println("=========== BMP388 ===========");
     Serial.print("Temperature = ");
-    Serial.print(data.temperature);
-    Serial.println(" *C");
+    Serial.print(bmp388.temperature);
+    Serial.println(" °C");
 
     Serial.print("Pressure = ");
-    Serial.print(data.pressure);
+    Serial.print(bmp388.pressure);
     Serial.println(" hPa");
 
     Serial.print("Approx. Altitude = ");
@@ -115,6 +120,7 @@ bool bmp_read(){
     Serial.println(" m");
 
     Serial.println();
+    */
   }
   return true;
 }
@@ -169,18 +175,55 @@ bool scd_read(){
 
   data.co2 = co2Concentration;
   data.humidity = relativeHumidity;
+  data.temperature = temperature;
+    /*
+  Serial.println("============ SCD40 ============");
+  Serial.print("CO2 concentration: ");
+  Serial.print(co2Concentration);
+  Serial.println(" ppm");
 
-Serial.println("============ SCD40 ============");
-  Serial.print("CO2 concentration [ppm]: ");
-  Serial.print(data.co2);
-  Serial.println();
-  Serial.print("Temperature [°C]: ");
-  Serial.print(data.temperature);
-  Serial.println();
-  Serial.print("Relative Humidity [RH]: ");
-  Serial.print(data.humidity);
-  Serial.println();
-  Serial.println();
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.println(" °C");
 
+  Serial.print("Relative Humidity: ");
+  Serial.print(relativeHumidity);
+  Serial.println(" %");
+
+  Serial.println();
+    */
   return true;
+}
+
+void print_data(){
+  Serial.println("============ Packaged Data ============");
+  Serial.print("Temperature: ");
+  Serial.print(data.temperature);
+  Serial.print(" °C");
+  Serial.println();
+
+  Serial.print("Pressure: ");
+  Serial.print(data.pressure);
+  Serial.print(" kPa");
+  Serial.println();
+
+  Serial.print("Humidity: ");
+  Serial.print(data.humidity);
+  Serial.print(" %");
+  Serial.println();
+
+  Serial.print("Altitude: ");
+  Serial.print(data.altitude);
+  Serial.print(" m");
+  Serial.println();
+
+  Serial.print("CO2: ");
+  Serial.print(data.co2);
+  Serial.print(" ppm");
+  Serial.println();
+
+  Serial.print("Battery Level: ");
+  Serial.print(data.battery_level);
+  Serial.print(" %");
+  Serial.println();
 }
