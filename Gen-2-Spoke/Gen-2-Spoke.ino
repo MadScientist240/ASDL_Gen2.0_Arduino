@@ -64,13 +64,17 @@ void setup() {
   } else {
     Serial.println("SCD40 is diasbled in config");
   }
-
-  
 }
 
 void loop() {
   delay(config.sample_rate * 1000);
-  bmp_read();
+  if(config.bmp_enabled){
+    bmp_read();
+  }
+
+  if(config.scd_enabled){
+    scd_read();
+  }
 }
 
 bool bmp_init(){
@@ -92,7 +96,7 @@ bool bmp_read(){
     Serial.println("BMP388 Reading Failed");
     return false;
   } else {
-    Serial.println("========== BMP388 ==========");
+    Serial.println("=========== BMP388 ===========");
 
     data.temperature = bmp388.temperature;
     data.pressure = bmp388.pressure / 100.0;
@@ -116,7 +120,7 @@ bool bmp_read(){
 }
 
 bool scd_init(){
-  scd40.begin(Wire, SCD41_I2C_ADDR_62);
+  scd40.begin(Wire, SCD40_I2C_ADDR_62);
 
   error = scd40.wakeUp();
   if(error != 0){
@@ -150,7 +154,7 @@ bool scd_init(){
   return true;
 }
 
-bool scd_ready(){
+bool scd_read(){
   error = scd40.getDataReadyStatus(dataReady);
   if(error != 0){
     Serial.print("Error trying to get SCD40 data ready status");
@@ -166,6 +170,7 @@ bool scd_ready(){
   data.co2 = co2Concentration;
   data.humidity = relativeHumidity;
 
+Serial.println("============ SCD40 ============");
   Serial.print("CO2 concentration [ppm]: ");
   Serial.print(data.co2);
   Serial.println();
@@ -174,6 +179,7 @@ bool scd_ready(){
   Serial.println();
   Serial.print("Relative Humidity [RH]: ");
   Serial.print(data.humidity);
+  Serial.println();
   Serial.println();
 
   return true;
