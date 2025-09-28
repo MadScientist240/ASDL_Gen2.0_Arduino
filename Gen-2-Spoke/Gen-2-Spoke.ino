@@ -226,4 +226,5 @@ void print_data(){
   Serial.print(data.battery_level);
   Serial.print(" %");
   Serial.println();
+  Serial.println();
 }
