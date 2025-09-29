@@ -10,26 +10,33 @@
 #include <Adafruit_Sensor.h>
 #include "Adafruit_BMP3XX.h"
 #include <SensirionI2cScd4x.h>
+#include "Zigbee.h"
+#include "esp_zigbee_core.h"
+#include "esp_err.h"
+#include "nvs_flash.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_zigbee_core.h"
 
 // Sensors
 Adafruit_BMP3XX bmp388;
 SensirionI2cScd4x scd40;
 
 // Sensor Structures
-typedef struct {
+struct data_struct{
   float temperature;    // °C
   float pressure;       // kPa
   float humidity;       // %
   float altitude;       // Meters
   float co2;            // ppm
   float battery_level;  // %
-}data_struct;
+}__attribute__((packed));
 
-typedef struct {
+struct config_struct{
   int sample_rate;      // seconds
   bool bmp_enabled;
   bool scd_enabled;
-}config_struct;
+}__attribute__((packed));
 
 data_struct data;
 config_struct config = {5, true, true};
@@ -46,10 +53,19 @@ uint16_t co2Concentration;
 float temperature;
 float relativeHumidity;
 
+// Zigbee
+#define ASDL_CUSTOM_CLUSTER_ID 0xFC00
+#define SENSOR_DATA_ATTR_ID 0x0001
+
 
 void setup() {
   Serial.begin(115200);
   Wire.begin(SDA_PIN, SCL_PIN);
+
+  // Zigbee Init:
+  nvs_flash_init();
+  Serial.println("ZIGBEE: Starting Zigbee task");
+  xTaskCreate(zigbee_task, "zigbee", 4096, NULL, 5, NULL);
 
   // BMP388 Init:
   if(config.bmp_enabled){
@@ -67,20 +83,30 @@ void setup() {
 }
 
 void loop() {
-  delay(config.sample_rate * 1000);
-    if(config.scd_enabled){
-    scd_read();
-  }
-  if(config.bmp_enabled){
-    bmp_read();
-  }
-
-  print_data();
+  static bool was_connected = false;
+    bool is_connected = esp_zb_bdb_dev_joined();
+    
+    if (is_connected && !was_connected) {
+        Serial.println("✓ JOINED NETWORK!");
+        was_connected = true;
+    } else if (!is_connected && was_connected) {
+        Serial.println("✗ DISCONNECTED");
+        was_connected = false;
+    }
+    
+    if (is_connected) {
+      // Poll sensors here:
+      delay(config.sample_rate * 1000);
+      scd_read();
+      bmp_read();
+      print_data();
+    }
+    delay(1000);
 }
 
 bool bmp_init(){
   if(!bmp388.begin_I2C()){
-    Serial.println("Could not find BMP388 sensor");
+    Serial.println("BMP388: Could not find BMP388 sensor");
     return false;
   } else {
     // Set up oversampling and filter initialization
@@ -93,36 +119,41 @@ bool bmp_init(){
 }
 
 bool bmp_read(){
-  if(!bmp388.performReading()){
-    Serial.println("BMP388 Reading Failed");
-    return false;
-  } else {
+  if(config.bmp_enabled){
+    if(!bmp388.performReading()){
+      Serial.println("BMP388: Reading Failed");
+      return false;
+    } else {
 
-    data.pressure = bmp388.pressure / 100.0;
-    data.altitude = bmp388.readAltitude(SEALEVELPRESSURE_HPA);
+      data.pressure = bmp388.pressure / 100.0;
+      data.altitude = bmp388.readAltitude(SEALEVELPRESSURE_HPA);
 
-    // Get temp from SCD40 BY DEFAULT, else rely on BMP388
-    if(error !=  0 || !config.scd_enabled){ 
-      data.temperature = bmp388.temperature;
+      // Get temp from SCD40 BY DEFAULT, else rely on BMP388
+      if(error !=  0 || !config.scd_enabled){ 
+        data.temperature = bmp388.temperature;
+      }
+      /*
+      Serial.println("=========== BMP388 ===========");
+      Serial.print("Temperature = ");
+      Serial.print(bmp388.temperature);
+      Serial.println(" °C");
+
+      Serial.print("Pressure = ");
+      Serial.print(bmp388.pressure);
+      Serial.println(" hPa");
+
+      Serial.print("Approx. Altitude = ");
+      Serial.print(data.altitude);
+      Serial.println(" m");
+
+      Serial.println();
+      */
     }
-    /*
-    Serial.println("=========== BMP388 ===========");
-    Serial.print("Temperature = ");
-    Serial.print(bmp388.temperature);
-    Serial.println(" °C");
-
-    Serial.print("Pressure = ");
-    Serial.print(bmp388.pressure);
-    Serial.println(" hPa");
-
-    Serial.print("Approx. Altitude = ");
-    Serial.print(data.altitude);
-    Serial.println(" m");
-
-    Serial.println();
-    */
+    return true;
+  } else {
+    Serial.println("BMP388: Disabled in config");
+    return false;
   }
-  return true;
 }
 
 bool scd_init(){
@@ -130,69 +161,74 @@ bool scd_init(){
 
   error = scd40.wakeUp();
   if(error != 0){
-    Serial.println("Error trying to wake up SCD40");
+    Serial.println("SCD40: Error trying to wake up");
     return false;
   }
 
   error = scd40.stopPeriodicMeasurement();
   if(error != 0){
-    Serial.println("Error trying to stop SCD40 periodic measurements");
+    Serial.println("SCD40: Error trying to stop periodic measurements");
     return false;
   }
 
   error = scd40.reinit();
   if(error != 0){
-    Serial.println("Error trying to reinit SCD40");
+    Serial.println("SCD40: Error trying to reinit");
     return false;
   }
   
   error = scd40.getSerialNumber(serialNumber);
   if(error != 0){
-    Serial.println("Error trying to get SCD40 serial number");
+    Serial.println("SCD40: Error trying to get serial number");
     return false;
   }
 
   error = scd40.startPeriodicMeasurement();
   if(error != 0){
-    Serial.println("Error trying to start SCD40 periodic measurements");
+    Serial.println("SCD40: Error trying to start periodic measurements");
     return false;
   }
   return true;
 }
 
 bool scd_read(){
-  error = scd40.getDataReadyStatus(dataReady);
-  if(error != 0){
-    Serial.print("Error trying to get SCD40 data ready status");
+  if(config.scd_enabled){
+    error = scd40.getDataReadyStatus(dataReady);
+    if(error != 0){
+      Serial.print("SCD40: Error trying to get data ready status");
+      return false;
+    }
+
+    error = scd40.readMeasurement(co2Concentration, temperature, relativeHumidity);
+    if(error != 0){
+      Serial.print("SCD40: Error trying to read measurement");
+      return false;
+    }
+
+    data.co2 = co2Concentration;
+    data.humidity = relativeHumidity;
+    data.temperature = temperature;
+      /*
+    Serial.println("============ SCD40 ============");
+    Serial.print("CO2 concentration: ");
+    Serial.print(co2Concentration);
+    Serial.println(" ppm");
+
+    Serial.print("Temperature: ");
+    Serial.print(temperature);
+    Serial.println(" °C");
+
+    Serial.print("Relative Humidity: ");
+    Serial.print(relativeHumidity);
+    Serial.println(" %");
+
+    Serial.println();
+      */
+    return true;
+  } else {
+    Serial.println("SCD40: Disabled in config");
     return false;
   }
-
-  error = scd40.readMeasurement(co2Concentration, temperature, relativeHumidity);
-  if(error != 0){
-    Serial.print("Error trying to read SCD40 measurement");
-    return false;
-  }
-
-  data.co2 = co2Concentration;
-  data.humidity = relativeHumidity;
-  data.temperature = temperature;
-    /*
-  Serial.println("============ SCD40 ============");
-  Serial.print("CO2 concentration: ");
-  Serial.print(co2Concentration);
-  Serial.println(" ppm");
-
-  Serial.print("Temperature: ");
-  Serial.print(temperature);
-  Serial.println(" °C");
-
-  Serial.print("Relative Humidity: ");
-  Serial.print(relativeHumidity);
-  Serial.println(" %");
-
-  Serial.println();
-    */
-  return true;
 }
 
 void print_data(){
@@ -227,4 +263,37 @@ void print_data(){
   Serial.print(" %");
   Serial.println();
   Serial.println();
+}
+
+// ================= ZIGBEE FUNCTIONS =================
+void zigbee_task(void *arg){
+  // Init Zigbee
+    esp_zb_cfg_t zb_cfg;
+    zb_cfg.esp_zb_role = ESP_ZB_DEVICE_TYPE_ED;
+    zb_cfg.install_code_policy = false;
+    zb_cfg.nwk_cfg.zczr_cfg.max_children = 0;
+    esp_zb_init(&zb_cfg);
+    
+    // Create custom cluster
+    esp_zb_attribute_list_t *cluster = esp_zb_zcl_attr_list_create(ASDL_CUSTOM_CLUSTER_ID);
+    esp_zb_cluster_add_attr(cluster, ASDL_CUSTOM_CLUSTER_ID, SENSOR_DATA_ATTR_ID, ESP_ZB_ZCL_ATTR_TYPE_OCTET_STRING,
+                            ESP_ZB_ZCL_ATTR_ACCESS_READ_ONLY, &data);
+    
+    // Add cluster to list
+    esp_zb_cluster_list_t *cluster_list = esp_zb_zcl_cluster_list_create();
+    esp_zb_cluster_list_add_custom_cluster(cluster_list, cluster, ESP_ZB_ZCL_CLUSTER_SERVER_ROLE);
+    
+    // Create endpoint
+    esp_zb_ep_list_t *endpoint_list = esp_zb_ep_list_create();
+    esp_zb_endpoint_config_t ep_cfg = {
+        .endpoint = 10,
+        .app_profile_id = ESP_ZB_AF_HA_PROFILE_ID,
+        .app_device_id = ESP_ZB_HA_CUSTOM_ATTR_DEVICE_ID
+    };
+    esp_zb_ep_list_add_ep(endpoint_list, cluster_list, ep_cfg);
+    
+    // Register and start
+    esp_zb_device_register(endpoint_list);
+    esp_zb_start(false);
+    esp_zb_main_loop_iteration();
 }
