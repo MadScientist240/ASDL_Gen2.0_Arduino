@@ -39,7 +39,7 @@ struct config_struct{
 }__attribute__((packed));
 
 data_struct data;
-config_struct config = {5, true, true};
+config_struct config = {10, true, true}; // Adjust to desired interval
 
 #define SCL_PIN 7
 #define SDA_PIN 6
@@ -92,7 +92,7 @@ void loop() {
     } else if (!is_connected && was_connected) {
         Serial.println("✗ DISCONNECTED");
         was_connected = false;
-    }
+    } 
     
     if (is_connected) {
       // Poll sensors here:
@@ -100,6 +100,7 @@ void loop() {
       scd_read();
       bmp_read();
       print_data();
+      send_data();
     }
     delay(1000);
 }
@@ -296,4 +297,17 @@ void zigbee_task(void *arg){
     esp_zb_device_register(endpoint_list);
     esp_zb_start(false);
     esp_zb_main_loop_iteration();
+}
+
+void send_data() {
+    esp_zb_zcl_report_attr_cmd_t cmd;
+    cmd.address_mode = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
+    cmd.zcl_basic_cmd.dst_addr_u.addr_short = 0x0000;  // Coordinator
+    cmd.zcl_basic_cmd.dst_endpoint = 1;
+    cmd.zcl_basic_cmd.src_endpoint = 10;
+    cmd.clusterID = ASDL_CUSTOM_CLUSTER_ID;      // Your custom cluster ID
+    cmd.attributeID = SENSOR_DATA_ATTR_ID;    // Your custom attribute ID
+    //cmd.cluster_role = ESP_ZB_ZCL_CLUSTER_SERVER_ROLE;
+    
+    esp_zb_zcl_report_attr_cmd_req(&cmd);
 }
