@@ -19,13 +19,15 @@ ZigbeePM25Sensor zbPM25 = ZigbeePM25Sensor(12);
 ZigbeePressureSensor zbPressure = ZigbeePressureSensor(13);
 ZigbeeAnalog zbCO2 = ZigbeeAnalog(14);
 ZigbeeAnalog zbAltitude = ZigbeeAnalog(15);
+ZigbeeAnalog zbHubHeartbeat = ZigbeeAnalog(16);
+bool report_success = true;
 
 
 // Configuration
-bool PM25_ACTIVE = false;
-bool BMP_ACTIVE = false;
-bool SCD_ACTIVE = false;
-int SAMPLE_RATE = 10; // seconds
+bool PM25_ACTIVE = true;
+bool BMP_ACTIVE = true;
+bool SCD_ACTIVE = true;
+int SAMPLE_RATE = 60; // seconds
 
 // Sensors
 Adafruit_BMP3XX bmp388 = Adafruit_BMP3XX();
@@ -45,9 +47,24 @@ float relativeHumidity;
 // IO
 #define SCL_PIN 7
 #define SDA_PIN 6
+#define LED_PIN 8
+#define BUTTON_PIN 9
+
+// LED
+bool led_flashing = false;
+uint8_t led_r = 0, led_g = 0, led_b = 0;
+unsigned long last_flash = 0;
+bool flash_state = false;
+
+// Misc.
+static unsigned long last_hub_ping = 0;
 
 void setup() {
   Serial.begin(115200);
+  Wire.begin(SDA_PIN, SCL_PIN);
+
+  neopixelWrite(LED_PIN, 0, 0, 0);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
 
   Zigbee.addEndpoint(&zbTemperature);
   Zigbee.addEndpoint(&zbHumidity);
@@ -55,6 +72,7 @@ void setup() {
   Zigbee.addEndpoint(&zbPressure);
   Zigbee.addEndpoint(&zbCO2);
   Zigbee.addEndpoint(&zbAltitude);
+  Zigbee.addEndpoint(&zbHubHeartbeat);
 
   // Cluster Initialization
   zbHumidity.addAnalogInput();
@@ -68,50 +86,91 @@ void setup() {
   zbAltitude.addAnalogInput();
   zbAltitude.setAnalogInputApplication(0);
   zbAltitude.setAnalogInputDescription("Altitude");
-  
-  Zigbee.begin(ZIGBEE_END_DEVICE, true);
 
+  zbHubHeartbeat.addAnalogOutput();
+  zbHubHeartbeat.setAnalogOutputDescription("Heartbeat");
+  zbHubHeartbeat.onAnalogOutputChange(onPingReceived);
+
+  // Enable Multiple Binding
+  zbTemperature.allowMultipleBinding(true);
+  zbHumidity.allowMultipleBinding(true);
+  zbPM25.allowMultipleBinding(true);
+  zbPressure.allowMultipleBinding(true);
+  zbCO2.allowMultipleBinding(true);
+  zbAltitude.allowMultipleBinding(true);
+  zbHubHeartbeat.allowMultipleBinding(true);
+  
+  esp_zb_cfg_t role_config = esp_zb_cfg_t();
+
+  Zigbee.begin(ZIGBEE_END_DEVICE, true);
+  globalSensorInit();
 }
 
 void loop() {
-  if(Zigbee.connected()){
-    globalSensorReport();
+  static int reconnect_attempts = 1;
+  static unsigned long last_reconnect_attempt = 0;
 
+  updateLED();
+  
+  if (digitalRead(BUTTON_PIN) == LOW) {
+    setLED(0, 0, 255, false);
+    localSensorTest();
+  }
+
+  if(Zigbee.connected() || (millis() - last_hub_ping < 90000)){
+    setLED(0, 255, 0, false);
+    reconnect_attempts = 0;
+    globalSensorReport();
     delay(SAMPLE_RATE * 1000);
   } else {
-    Serial.println("Waiting for Zigbee to connect...");
-    delay(5000);
+    setLED(255, 0, 0, true);
+
+    if(millis() - last_reconnect_attempt > 5000){
+      Serial.printf("Disconnected. Reconnect attempt %d/10\n", reconnect_attempts++);
+      last_reconnect_attempt = millis();
+
+      //Restart device after 10 failed attempts
+      if(reconnect_attempts > 10){
+        setLED(255, 0, 0, false);
+        delay(1000);
+        Serial.println("Too many failed attempts, attempting factory reset...");
+        Zigbee.factoryReset(true);
+        ESP.restart();
+      }
+    }
   }
 }
 
-/*
- *  Read, and then report to Zigbee
- */
-void globalSensorReport(){
+// Higher level
+bool globalSensorReport(){
   //readBMP();
   //readSCD();
   //readPM25();
 
   // DUMMY DATA:
-  zbTemperature.setTemperature(8330);
+  zbTemperature.setTemperature(83.30);
   zbHumidity.setAnalogInput(68.221);
   zbCO2.setAnalogInput(242.11);
   zbPressure.setPressure(7640);
   zbAltitude.setAnalogInput(2000.0);
   zbPM25.setPM25(650);
 
-  zbTemperature.report();
-  zbHumidity.reportAnalogInput();
-  zbCO2.reportAnalogInput();
-  zbPressure.report();
-  zbAltitude.reportAnalogInput();
-  zbPM25.report();
+  report_success = zbTemperature.report();
+  report_success = zbHumidity.reportAnalogInput();
+  report_success = zbCO2.reportAnalogInput();
+  report_success = zbPressure.report();
+  report_success = zbAltitude.reportAnalogInput();
+  report_success = zbPM25.report();
   
-  Serial.println("Data sent!");
+  if(report_success){
+    Serial.println("Data sent!");
+  } else {
+    Serial.println("Failed silently!");
+  }
+  return report_success;
 }
 
 void globalSensorInit(){
-// SCD40 Initialization
   if(SCD_ACTIVE){
     scd40.begin(Wire, SCD40_I2C_ADDR_62);
 
@@ -138,7 +197,6 @@ void globalSensorInit(){
     Serial.println("SCD40 Disabled in configuration");
   }
 
-// BMP388 Initialization
   if(BMP_ACTIVE){
     if(!bmp388.begin_I2C()){
       Serial.println("BMP388: Could not find BMP388 sensor");
@@ -153,7 +211,6 @@ void globalSensorInit(){
     Serial.println("BMP388 Disabled in configuration");
   }
 
-// PM2.5 Initialization
   if(PM25_ACTIVE){
     if(pm25.begin_I2C()){
       while (1) delay(10);
@@ -165,10 +222,45 @@ void globalSensorInit(){
   }
 }
 
+void localSensorTest(){
+  bool totalTesting = true;
+  Serial.println("\n=== LOCAL SENSOR TEST ===");
+  
+  // Read sensors immediately
+  if(readBMP()) {
+    Serial.println("✓ BMP388 OK");
+  } else {
+    Serial.println("✗ BMP388 FAILED");
+    totalTesting = false;
+  }
+
+  if(readSCD()) {
+    Serial.println("✓ SCD40 OK");
+  } else {
+    Serial.println("✗ SCD40 FAILED");
+    totalTesting = false;
+  }
+  
+  if(readPM25()) {
+    Serial.println("✓ PM2.5 OK");
+  } else {
+    Serial.println("✗ PM2.5 FAILED");
+    totalTesting = false;
+  }
+
+  if(totalTesting){
+    setLED(255, 0, 255, false);
+  } else {
+    setLED(255, 255, 0, false);
+  }
+  delay(1000);  // Give time for test results to display
+
+  Serial.println("=== TEST COMPLETE ===\n");
+}
+
 // Low level
 bool readSCD(){
   if(scd40.getDataReadyStatus(dataReady) != 0){
-    Serial.print("SCD40: Error trying to get data ready status");
     return false;
   }
 
@@ -180,35 +272,60 @@ bool readSCD(){
   zbTemperature.setTemperature(temperature);
   zbHumidity.setAnalogInput(relativeHumidity);
   zbCO2.setAnalogInput(co2Concentration);
-  
   return true;
 }
 
 bool readBMP(){
   if(!bmp388.performReading()){
-    Serial.println("BMP388: Reading Failed");
     return false;
-  } else {
-
-    zbPressure.setPressure(bmp388.pressure);
+  }
+    zbPressure.setPressure(bmp388.pressure / 100.0);  // Pa → hPa
     zbAltitude.setAnalogInput(bmp388.readAltitude(SEALEVELPRESSURE_HPA));
 
     // Get temp from SCD40 BY DEFAULT, else rely on BMP388
     if(!SCD_ACTIVE){ 
       zbTemperature.setTemperature(bmp388.temperature);
     }
-  }
   return true;
 }
 
 bool readPM25(){
   if(!pm25.read(&data)){
-    Serial.print("Could not read from AQI");
-    delay(1000);
     return false;
   }
-
   // Standard = Indoor Reporting
-  zbPM25.setPM25(data.pm25_standard);
+  zbPM25.setPM25(data.pm25_standard * 10);
   return true;
+}
+
+void setLED(uint8_t r, uint8_t g, uint8_t b, bool flash) {
+  led_r = r;
+  led_g = g;
+  led_b = b;
+  led_flashing = flash;
+  
+  if (!flash) {
+    neopixelWrite(LED_PIN, r, g, b);
+  }
+}
+
+void updateLED() {
+  if (led_flashing) {
+    if (millis() - last_flash > 500) {
+      flash_state = !flash_state;
+      last_flash = millis();
+      
+      if (flash_state) {
+        neopixelWrite(LED_PIN, led_r, led_g, led_b);
+      } else {
+        neopixelWrite(LED_PIN, 0, 0, 0);
+      }
+    }
+  }
+}
+
+// Misc
+void onPingReceived(float value){
+  last_hub_ping = millis();
+  Serial.println("Hub Ping received!");
 }
