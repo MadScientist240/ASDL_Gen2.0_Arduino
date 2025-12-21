@@ -40,7 +40,9 @@ bool iaq_manager_check_all_endpoint_status();
 
 int iaq_manager_get_number_of_devices();
 
-IAQ_Collected_Data iaq_manager_get_packaged_data();
+IAQ_Collected_Data iaq_manager_get_avg_data();
+
+device_info_t* iaq_manager_get_all_devices();
 
 void iaq_manager_handle_incoming_report(esp_zb_zcl_report_attr_message_t *report);
 

@@ -42,7 +42,7 @@ bool iaq_manager_check_all_endpoint_status(){
     return true;
 }
 
-IAQ_Collected_Data iaq_manager_get_packaged_data(){
+IAQ_Collected_Data iaq_manager_get_avg_data(){
     IAQ_Collected_Data avg_data = {0};
     int accounted_devices = 0;
     
@@ -70,6 +70,10 @@ IAQ_Collected_Data iaq_manager_get_packaged_data(){
 
     avg_data.num_devices_included = accounted_devices;
     return avg_data;
+}
+
+device_info_t* iaq_manager_get_all_devices(){
+    return devices;
 }
 
 void iaq_manager_handle_incoming_report(esp_zb_zcl_report_attr_message_t *report){
@@ -188,9 +192,8 @@ void iaq_manager_send_keepalives(void) {
 
 void iaq_manager_check_device_timeouts(){
     uint32_t now = xTaskGetTickCount();
-    ESP_LOGI(TAG, "Number of devices: %d", numDevices);
+    ESP_LOGI(TAG, "IAQ Network Status: %s", iaq_manager_check_all_endpoint_status() ? "Good" : "Bad");
     for (int i = 0; i < numDevices; i++) {
-        ESP_LOGI(TAG, "IAQ Network Status: %s", iaq_manager_check_all_endpoint_status() ? "Good" : "Bad");
         if (devices[i].active && devices[i].last_ping > 0) {
             uint32_t time_since = pdTICKS_TO_MS(now - devices[i].last_ping);
             
@@ -204,7 +207,7 @@ void iaq_manager_check_device_timeouts(){
 }
 
 void iaq_mgr_print_data_snapshot(){
-    IAQ_Collected_Data snapshot = iaq_manager_get_packaged_data();
+    IAQ_Collected_Data snapshot = iaq_manager_get_avg_data();
 
     ESP_LOGI(TAG, "========= START OF SNAPSHOT =========");
     ESP_LOGI(TAG, "Temp: %.2f°C", snapshot.temperature);

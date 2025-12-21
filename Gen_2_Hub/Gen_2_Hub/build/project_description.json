@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "Gen_2_Hub",
-    "project_version":    "050c36f-dirty",
+    "project_version":    "61a5d27-dirty",
     "project_path":       "C:/Users/1xlr8/Desktop/ASDL/ASDL_Gen2.0_Arduino/Gen_2_Hub/Gen_2_Hub",
     "idf_path":           "C:/Users/1xlr8/esp/esp-idf-v5.1.4",
     "build_dir":          "C:/Users/1xlr8/Desktop/ASDL/ASDL_Gen2.0_Arduino/Gen_2_Hub/Gen_2_Hub/build",
@@ -1120,7 +1120,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/1xlr8/Desktop/ASDL/ASDL_Gen2.0_Arduino/Gen_2_Hub/Gen_2_Hub/build/esp-idf/vfs/libvfs.a",
-            "sources": [ "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_eventfd.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_uart.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_semihost.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_console.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_usb_serial_jtag.c" ],
+            "sources": [ "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_eventfd.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_uart.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_semihost.c", "C:/Users/1xlr8/esp/esp-idf-v5.1.4/components/vfs/vfs_console.c" ],
             "include_dirs": [ "include" ]
         },
         "wear_levelling": {

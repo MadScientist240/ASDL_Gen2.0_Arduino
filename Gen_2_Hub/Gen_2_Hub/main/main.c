@@ -180,7 +180,8 @@ static void data_bridge_task(void *pvParameters){
     ESP_LOGI(TAG, "Starting Data Bridge Task");
 
     while(1){
-        bridge_mgr_ship_iaq_data(iaq_manager_get_packaged_data());
+        //bridge_mgr_ship_avg_iaq_data(iaq_manager_get_packaged_data());    this was for averaging the data into one set
+        bridge_mgr_ship_iaq_data(iaq_manager_get_all_devices(), iaq_manager_get_number_of_devices());
         vTaskDelay(pdMS_TO_TICKS(SHIPPING_INTERVAL * 60000));
     }
 }

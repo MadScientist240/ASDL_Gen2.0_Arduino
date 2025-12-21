@@ -8,7 +8,10 @@
 #define MAX_PAYLOAD_SIZE 256
 #define TAG "DATA_BRIDGE"
 
-// Take packaged struct, wrap for serial, and send
-void bridge_mgr_ship_iaq_data(IAQ_Collected_Data iaq);
+// Take avg struct, wrap for serial, and send
+void bridge_mgr_ship_avg_iaq_data(IAQ_Collected_Data iaq);
+
+// Take collected struct, wrap for serial, and send
+void bridge_mgr_ship_iaq_data(device_info_t* devices, int numDevices);
 
 #endif
