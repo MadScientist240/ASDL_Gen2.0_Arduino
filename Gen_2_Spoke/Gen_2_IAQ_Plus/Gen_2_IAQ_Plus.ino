@@ -1,5 +1,5 @@
 /********************************************************
-  This Arduino Sketch is for the GenII IAQ Spoke device
+  This Arduino Sketch is for the GenII IAQ+ Spoke device
 
   - Uses BMP388, SCD40, and PM2.5 sensors over I2C
   - Communicates with GenII Hub device (Zb Coord.)
@@ -45,8 +45,12 @@ float temperature;
 float relativeHumidity;
 
 // IO
-#define SCL_PIN 7
-#define SDA_PIN 6
+/*
+ * For ESP32C6 v 1.2, pins are default to 6 and 7
+ * For ESP32C6 Mini, use pins 4 and 5
+ */
+#define SCL_PIN 5 // 7
+#define SDA_PIN 4 // 6
 #define LED_PIN 8
 #define BUTTON_PIN 9
 
@@ -57,6 +61,7 @@ unsigned long last_flash = 0;
 bool flash_state = false;
 
 // Misc.
+extern TaskHandle_t loopTaskHandle;
 static unsigned long last_hub_ping = 0;
 
 void setup() {
@@ -104,6 +109,11 @@ void setup() {
 
   Zigbee.begin(ZIGBEE_END_DEVICE, true);
   globalSensorInit();
+
+  delay(2000);
+
+  // Create sensor testing task
+  xTaskCreate(localSensorTest, "Sensor Testing Task", 2048, NULL, 5, NULL);
 }
 
 void loop() {
@@ -112,12 +122,7 @@ void loop() {
 
   updateLED();
   
-  if (digitalRead(BUTTON_PIN) == LOW) {
-    setLED(0, 0, 255, false);
-    localSensorTest();
-  }
-
-  if(Zigbee.connected() || (millis() - last_hub_ping < 90000)){
+  if(Zigbee.connected() && (millis() - last_hub_ping < 90000)){
     setLED(0, 255, 0, false);
     reconnect_attempts = 0;
     globalSensorReport();
@@ -143,17 +148,18 @@ void loop() {
 
 // Higher level
 bool globalSensorReport(){
-  //readBMP();
-  //readSCD();
-  //readPM25();
+  readBMP();
+  readSCD();
+  readPM25();
 
   // DUMMY DATA:
+  /*
   zbTemperature.setTemperature(83.30);
   zbHumidity.setAnalogInput(68.221);
   zbCO2.setAnalogInput(242.11);
   zbPressure.setPressure(7640);
   zbAltitude.setAnalogInput(2000.0);
-  zbPM25.setPM25(650);
+  zbPM25.setPM25(650);*/
 
   report_success = zbTemperature.report();
   report_success = zbHumidity.reportAnalogInput();
@@ -222,40 +228,50 @@ void globalSensorInit(){
   }
 }
 
-void localSensorTest(){
-  bool totalTesting = true;
-  Serial.println("\n=== LOCAL SENSOR TEST ===");
-  
-  // Read sensors immediately
-  if(readBMP()) {
-    Serial.println("✓ BMP388 OK");
-  } else {
-    Serial.println("✗ BMP388 FAILED");
-    totalTesting = false;
-  }
+void localSensorTest(void *pvParameters){
 
-  if(readSCD()) {
-    Serial.println("✓ SCD40 OK");
-  } else {
-    Serial.println("✗ SCD40 FAILED");
-    totalTesting = false;
-  }
-  
-  if(readPM25()) {
-    Serial.println("✓ PM2.5 OK");
-  } else {
-    Serial.println("✗ PM2.5 FAILED");
-    totalTesting = false;
-  }
+  for(;;){
+    if (digitalRead(BUTTON_PIN) == LOW) {
+      vTaskSuspend(loopTaskHandle);
 
-  if(totalTesting){
-    setLED(255, 0, 255, false);
-  } else {
-    setLED(255, 255, 0, false);
-  }
-  delay(1000);  // Give time for test results to display
+      bool totalTesting = true;
+      Serial.println("\n=== LOCAL SENSOR TEST ===");
+      
+      // Read sensors immediately
+      if(readBMP()) {
+        Serial.println("✓ BMP388 OK");
+      } else {
+        Serial.println("✗ BMP388 FAILED");
+        totalTesting = false;
+      }
 
-  Serial.println("=== TEST COMPLETE ===\n");
+      if(readSCD()) {
+        Serial.println("✓ SCD40 OK");
+      } else {
+        Serial.println("✗ SCD40 FAILED");
+        totalTesting = false;
+      }
+
+      if(readPM25()) {
+        Serial.println("✓ PM2.5 OK");
+      } else {
+        Serial.println("✗ PM2.5 FAILED");
+        totalTesting = false;
+      }
+
+      if(totalTesting){
+        setLED(255, 0, 255, false);
+      } else {
+        setLED(255, 255, 0, false);
+      }
+      delay(3000);  // Give time for test results to display
+
+      Serial.println("=== TEST COMPLETE ===\n");
+
+      vTaskResume(loopTaskHandle);
+    }
+    delay(100);
+  }
 }
 
 // Low level
