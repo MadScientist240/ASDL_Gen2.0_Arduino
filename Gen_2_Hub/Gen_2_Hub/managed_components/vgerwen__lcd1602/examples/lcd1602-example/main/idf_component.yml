@@ -1,4 +1,0 @@
-dependencies:
-  vgerwen/lcd1602:
-    version: "*"
-    override_path: "../../../"

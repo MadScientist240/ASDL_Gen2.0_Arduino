@@ -190,20 +190,26 @@ void iaq_manager_send_keepalives(void) {
     }
 }
 
-void iaq_manager_check_device_timeouts(){
+bool iaq_manager_check_device_timeouts(){
     uint32_t now = xTaskGetTickCount();
-    ESP_LOGI(TAG, "IAQ Network Status: %s", iaq_manager_check_all_endpoint_status() ? "Good" : "Bad");
-    for (int i = 0; i < numDevices; i++) {
-        if (devices[i].active && devices[i].last_ping > 0) {
-            uint32_t time_since = pdTICKS_TO_MS(now - devices[i].last_ping);
-            
-            if (time_since > DEVICE_TIMEOUT_MS) {
-                ESP_LOGW(TAG, "Device 0x%04x timed out - no data for %lu minutes", 
-                         devices[i].short_addr, time_since / 60000);
-                devices[i].active = false;
+    bool all_endpoint_status = iaq_manager_check_all_endpoint_status();
+
+    if(!all_endpoint_status){
+        for (int i = 0; i < numDevices; i++) {
+            if (devices[i].active && devices[i].last_ping > 0) {
+                uint32_t time_since = pdTICKS_TO_MS(now - devices[i].last_ping);
+                
+                if (time_since > DEVICE_TIMEOUT_MS) {
+                    ESP_LOGW(TAG, "Device 0x%04x timed out - no data for %lu minutes", 
+                            devices[i].short_addr, time_since / 60000);
+                    devices[i].active = false;
+                }
             }
         }
     }
+
+    ESP_LOGI(TAG, "IAQ Network Status: %s", all_endpoint_status ? "Good" : "Bad");
+    return all_endpoint_status;
 }
 
 void iaq_mgr_print_data_snapshot(){

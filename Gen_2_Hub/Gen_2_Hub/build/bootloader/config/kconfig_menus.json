@@ -43,6 +43,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_AHB_GDMA_SUPPORTED",
+        "name": "SOC_AHB_GDMA_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_GPTIMER_SUPPORTED",
         "name": "SOC_GPTIMER_SUPPORTED",
         "range": null,
@@ -153,6 +163,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_PHY_SUPPORTED",
+        "name": "SOC_PHY_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_WIFI_SUPPORTED",
         "name": "SOC_WIFI_SUPPORTED",
         "range": null,
@@ -195,6 +215,16 @@
         "help": null,
         "id": "SOC_EFUSE_KEY_PURPOSE_FIELD",
         "name": "SOC_EFUSE_KEY_PURPOSE_FIELD",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_EFUSE_SUPPORTED",
+        "name": "SOC_EFUSE_SUPPORTED",
         "range": null,
         "title": null,
         "type": "bool"
@@ -413,6 +443,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_APM_CTRL_FILTER_SUPPORTED",
+        "name": "SOC_APM_CTRL_FILTER_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_PMU_SUPPORTED",
         "name": "SOC_PMU_SUPPORTED",
         "range": null,
@@ -453,8 +493,118 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_LP_PERIPHERALS_SUPPORTED",
+        "name": "SOC_LP_PERIPHERALS_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_LP_I2C_SUPPORTED",
         "name": "SOC_LP_I2C_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_ULP_LP_UART_SUPPORTED",
+        "name": "SOC_ULP_LP_UART_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_CLK_TREE_SUPPORTED",
+        "name": "SOC_CLK_TREE_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_ASSIST_DEBUG_SUPPORTED",
+        "name": "SOC_ASSIST_DEBUG_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_WDT_SUPPORTED",
+        "name": "SOC_WDT_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_SPI_FLASH_SUPPORTED",
+        "name": "SOC_SPI_FLASH_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_RNG_SUPPORTED",
+        "name": "SOC_RNG_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_LIGHT_SLEEP_SUPPORTED",
+        "name": "SOC_LIGHT_SLEEP_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_DEEP_SLEEP_SUPPORTED",
+        "name": "SOC_DEEP_SLEEP_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_MODEM_CLOCK_SUPPORTED",
+        "name": "SOC_MODEM_CLOCK_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_PM_SUPPORTED",
+        "name": "SOC_PM_SUPPORTED",
         "range": null,
         "title": null,
         "type": "bool"
@@ -743,6 +893,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_ADC_SHARED_POWER",
+        "name": "SOC_ADC_SHARED_POWER",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_APB_BACKUP_DMA",
         "name": "SOC_APB_BACKUP_DMA",
         "range": null,
@@ -815,6 +975,16 @@
         "help": null,
         "id": "SOC_INT_PLIC_SUPPORTED",
         "name": "SOC_INT_PLIC_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_CPU_HAS_CSR_PC",
+        "name": "SOC_CPU_HAS_CSR_PC",
         "range": null,
         "title": null,
         "type": "bool"
@@ -903,8 +1073,8 @@
         "children": [],
         "depends_on": null,
         "help": null,
-        "id": "SOC_GDMA_GROUPS",
-        "name": "SOC_GDMA_GROUPS",
+        "id": "SOC_AHB_GDMA_VERSION",
+        "name": "SOC_AHB_GDMA_VERSION",
         "range": null,
         "title": null,
         "type": "int"
@@ -913,8 +1083,18 @@
         "children": [],
         "depends_on": null,
         "help": null,
-        "id": "SOC_GDMA_PAIRS_PER_GROUP",
-        "name": "SOC_GDMA_PAIRS_PER_GROUP",
+        "id": "SOC_GDMA_NUM_GROUPS_MAX",
+        "name": "SOC_GDMA_NUM_GROUPS_MAX",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GDMA_PAIRS_PER_GROUP_MAX",
+        "name": "SOC_GDMA_PAIRS_PER_GROUP_MAX",
         "range": null,
         "title": null,
         "type": "int"
@@ -925,6 +1105,16 @@
         "help": null,
         "id": "SOC_GDMA_SUPPORT_ETM",
         "name": "SOC_GDMA_SUPPORT_ETM",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GDMA_SUPPORT_SLEEP_RETENTION",
+        "name": "SOC_GDMA_SUPPORT_SLEEP_RETENTION",
         "range": null,
         "title": null,
         "type": "bool"
@@ -1003,26 +1193,6 @@
         "children": [],
         "depends_on": null,
         "help": null,
-        "id": "SOC_GPIO_ETM_EVENTS_PER_GROUP",
-        "name": "SOC_GPIO_ETM_EVENTS_PER_GROUP",
-        "range": null,
-        "title": null,
-        "type": "int"
-    },
-    {
-        "children": [],
-        "depends_on": null,
-        "help": null,
-        "id": "SOC_GPIO_ETM_TASKS_PER_GROUP",
-        "name": "SOC_GPIO_ETM_TASKS_PER_GROUP",
-        "range": null,
-        "title": null,
-        "type": "int"
-    },
-    {
-        "children": [],
-        "depends_on": null,
-        "help": null,
         "id": "SOC_GPIO_SUPPORT_RTC_INDEPENDENT",
         "name": "SOC_GPIO_SUPPORT_RTC_INDEPENDENT",
         "range": null,
@@ -1043,8 +1213,48 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_LP_IO_CLOCK_IS_INDEPENDENT",
+        "name": "SOC_LP_IO_CLOCK_IS_INDEPENDENT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GPIO_IN_RANGE_MAX",
+        "name": "SOC_GPIO_IN_RANGE_MAX",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GPIO_OUT_RANGE_MAX",
+        "name": "SOC_GPIO_OUT_RANGE_MAX",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_GPIO_DEEP_SLEEP_WAKE_VALID_GPIO_MASK",
         "name": "SOC_GPIO_DEEP_SLEEP_WAKE_VALID_GPIO_MASK",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GPIO_DEEP_SLEEP_WAKE_SUPPORTED_PIN_CNT",
+        "name": "SOC_GPIO_DEEP_SLEEP_WAKE_SUPPORTED_PIN_CNT",
         "range": null,
         "title": null,
         "type": "int"
@@ -1073,11 +1283,51 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_GPIO_SUPPORT_HOLD_IO_IN_DSLP",
+        "name": "SOC_GPIO_SUPPORT_HOLD_IO_IN_DSLP",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_GPIO_SUPPORT_HOLD_SINGLE_IO_IN_DSLP",
         "name": "SOC_GPIO_SUPPORT_HOLD_SINGLE_IO_IN_DSLP",
         "range": null,
         "title": null,
         "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GPIO_CLOCKOUT_BY_GPIO_MATRIX",
+        "name": "SOC_GPIO_CLOCKOUT_BY_GPIO_MATRIX",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_CLOCKOUT_HAS_SOURCE_GATE",
+        "name": "SOC_CLOCKOUT_HAS_SOURCE_GATE",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GPIO_CLOCKOUT_CHANNEL_NUM",
+        "name": "SOC_GPIO_CLOCKOUT_CHANNEL_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
     },
     {
         "children": [],
@@ -1123,6 +1373,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_RTCIO_VALID_RTCIO_MASK",
+        "name": "SOC_RTCIO_VALID_RTCIO_MASK",
+        "range": null,
+        "title": null,
+        "type": "hex"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_DEDIC_GPIO_OUT_CHANNELS_NUM",
         "name": "SOC_DEDIC_GPIO_OUT_CHANNELS_NUM",
         "range": null,
@@ -1163,6 +1423,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_HP_I2C_NUM",
+        "name": "SOC_HP_I2C_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_I2C_FIFO_LEN",
         "name": "SOC_I2C_FIFO_LEN",
         "range": null,
@@ -1193,6 +1463,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_I2C_SUPPORT_HW_FSM_RST",
+        "name": "SOC_I2C_SUPPORT_HW_FSM_RST",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_I2C_SUPPORT_HW_CLR_BUS",
         "name": "SOC_I2C_SUPPORT_HW_CLR_BUS",
         "range": null,
@@ -1215,6 +1495,66 @@
         "help": null,
         "id": "SOC_I2C_SUPPORT_RTC",
         "name": "SOC_I2C_SUPPORT_RTC",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_I2C_SUPPORT_10BIT_ADDR",
+        "name": "SOC_I2C_SUPPORT_10BIT_ADDR",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_I2C_SLAVE_SUPPORT_BROADCAST",
+        "name": "SOC_I2C_SLAVE_SUPPORT_BROADCAST",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_I2C_SLAVE_CAN_GET_STRETCH_CAUSE",
+        "name": "SOC_I2C_SLAVE_CAN_GET_STRETCH_CAUSE",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_I2C_SLAVE_SUPPORT_I2CRAM_ACCESS",
+        "name": "SOC_I2C_SLAVE_SUPPORT_I2CRAM_ACCESS",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_I2C_SLAVE_SUPPORT_SLAVE_UNMATCH",
+        "name": "SOC_I2C_SLAVE_SUPPORT_SLAVE_UNMATCH",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_I2C_SUPPORT_SLEEP_RETENTION",
+        "name": "SOC_I2C_SUPPORT_SLEEP_RETENTION",
         "range": null,
         "title": null,
         "type": "bool"
@@ -1883,6 +2223,26 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_MPI_MEM_BLOCKS_NUM",
+        "name": "SOC_MPI_MEM_BLOCKS_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_MPI_OPERATIONS_NUM",
+        "name": "SOC_MPI_OPERATIONS_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_RSA_MAX_BIT_LEN",
         "name": "SOC_RSA_MAX_BIT_LEN",
         "range": null,
@@ -2108,6 +2468,46 @@
         "range": null,
         "title": null,
         "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_SPI_SCT_SUPPORTED",
+        "name": "SOC_SPI_SCT_SUPPORTED",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_SPI_SCT_REG_NUM",
+        "name": "SOC_SPI_SCT_REG_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_SPI_SCT_BUFFER_NUM_MAX",
+        "name": "SOC_SPI_SCT_BUFFER_NUM_MAX",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_SPI_SCT_CONF_BITLEN_MAX",
+        "name": "SOC_SPI_SCT_CONF_BITLEN_MAX",
+        "range": null,
+        "title": null,
+        "type": "hex"
     },
     {
         "children": [],
@@ -2413,8 +2813,28 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_TIMER_SUPPORT_SLEEP_RETENTION",
+        "name": "SOC_TIMER_SUPPORT_SLEEP_RETENTION",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_MWDT_SUPPORT_XTAL",
         "name": "SOC_MWDT_SUPPORT_XTAL",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_MWDT_SUPPORT_SLEEP_RETENTION",
+        "name": "SOC_MWDT_SUPPORT_SLEEP_RETENTION",
         "range": null,
         "title": null,
         "type": "bool"
@@ -2643,8 +3063,38 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_UART_HP_NUM",
+        "name": "SOC_UART_HP_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_UART_LP_NUM",
+        "name": "SOC_UART_LP_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_UART_FIFO_LEN",
         "name": "SOC_UART_FIFO_LEN",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_LP_UART_FIFO_LEN",
+        "name": "SOC_LP_UART_FIFO_LEN",
         "range": null,
         "title": null,
         "type": "int"
@@ -2695,6 +3145,26 @@
         "help": null,
         "id": "SOC_UART_SUPPORT_WAKEUP_INT",
         "name": "SOC_UART_SUPPORT_WAKEUP_INT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_UART_HAS_LP_UART",
+        "name": "SOC_UART_HAS_LP_UART",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_UART_SUPPORT_SLEEP_RETENTION",
+        "name": "SOC_UART_SUPPORT_SLEEP_RETENTION",
         "range": null,
         "title": null,
         "type": "bool"
@@ -2973,6 +3443,26 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_PM_RETENTION_MODULE_NUM",
+        "name": "SOC_PM_RETENTION_MODULE_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_PM_PAU_REGDMA_UPDATE_CACHE_BEFORE_WAIT_COMPARE",
+        "name": "SOC_PM_PAU_REGDMA_UPDATE_CACHE_BEFORE_WAIT_COMPARE",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_CLK_RC_FAST_SUPPORT_CALIBRATION",
         "name": "SOC_CLK_RC_FAST_SUPPORT_CALIBRATION",
         "range": null,
@@ -3023,6 +3513,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_RCC_IS_INDEPENDENT",
+        "name": "SOC_RCC_IS_INDEPENDENT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_TEMPERATURE_SENSOR_SUPPORT_FAST_RC",
         "name": "SOC_TEMPERATURE_SENSOR_SUPPORT_FAST_RC",
         "range": null,
@@ -3045,6 +3545,26 @@
         "help": null,
         "id": "SOC_TEMPERATURE_SENSOR_INTR_SUPPORT",
         "name": "SOC_TEMPERATURE_SENSOR_INTR_SUPPORT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_TEMPERATURE_SENSOR_SUPPORT_ETM",
+        "name": "SOC_TEMPERATURE_SENSOR_SUPPORT_ETM",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_RNG_CLOCK_IS_INDEPENDENT",
+        "name": "SOC_RNG_CLOCK_IS_INDEPENDENT",
         "range": null,
         "title": null,
         "type": "bool"
@@ -3243,6 +3763,26 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_LP_CORE_SINGLE_INTERRUPT_VECTOR",
+        "name": "SOC_LP_CORE_SINGLE_INTERRUPT_VECTOR",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_LP_CORE_SUPPORT_ETM",
+        "name": "SOC_LP_CORE_SUPPORT_ETM",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "IDF_CMAKE",
         "name": "IDF_CMAKE",
         "range": null,
@@ -3252,9 +3792,19 @@
     {
         "children": [],
         "depends_on": null,
-        "help": null,
+        "help": "- This option is for internal use only.\n- Enabling this option will help enable all FPGA support so as to\n  run ESP-IDF on an FPGA. This can help reproduce some issues that\n  only happens on FPGA condition, or when you have to burn some\n  efuses multiple times.",
         "id": "IDF_ENV_FPGA",
         "name": "IDF_ENV_FPGA",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": "- This option is ONLY used when doing new chip bringup.\n- This option will only enable necessary hw / sw settings for running\n  a hello_world application.",
+        "id": "IDF_ENV_BRINGUP",
+        "name": "IDF_ENV_BRINGUP",
         "range": null,
         "title": null,
         "type": "bool"
@@ -3265,6 +3815,36 @@
         "help": null,
         "id": "IDF_CI_BUILD",
         "name": "IDF_CI_BUILD",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "IDF_DOC_BUILD",
+        "name": "IDF_DOC_BUILD",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "IDF_TOOLCHAIN",
+        "name": "IDF_TOOLCHAIN",
+        "range": null,
+        "title": null,
+        "type": "string"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "IDF_TOOLCHAIN_CLANG",
+        "name": "IDF_TOOLCHAIN_CLANG",
         "range": null,
         "title": null,
         "type": "bool"
@@ -3313,11 +3893,11 @@
         "children": [],
         "depends_on": null,
         "help": null,
-        "id": "IDF_TARGET_LINUX",
-        "name": "IDF_TARGET_LINUX",
+        "id": "IDF_INIT_VERSION",
+        "name": "IDF_INIT_VERSION",
         "range": null,
         "title": null,
-        "type": "bool"
+        "type": "string"
     },
     {
         "children": [],
@@ -3383,8 +3963,68 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "IDF_TARGET_ESP32C5",
+        "name": "IDF_TARGET_ESP32C5",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [
+            {
+                "children": [],
+                "depends_on": "<choice IDF_TARGET_ESP32C5_VERSION>",
+                "help": null,
+                "id": "IDF_TARGET_ESP32C5_BETA3_VERSION",
+                "name": "IDF_TARGET_ESP32C5_BETA3_VERSION",
+                "range": null,
+                "title": "ESP32-C5 beta3",
+                "type": "bool"
+            },
+            {
+                "children": [],
+                "depends_on": "<choice IDF_TARGET_ESP32C5_VERSION>",
+                "help": null,
+                "id": "IDF_TARGET_ESP32C5_MP_VERSION",
+                "name": "IDF_TARGET_ESP32C5_MP_VERSION",
+                "range": null,
+                "title": "ESP32-C5 MP",
+                "type": "bool"
+            }
+        ],
+        "depends_on": "IDF_TARGET_ESP32C5",
+        "help": "ESP32-C5 will support two versions for a period.\nThis option is for internal use only.\nSelect the one that matches your chip model.",
+        "id": "esp32-c5-version",
+        "name": "IDF_TARGET_ESP32C5_VERSION",
+        "title": "ESP32-C5 version",
+        "type": "choice"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "IDF_TARGET_ESP32P4",
+        "name": "IDF_TARGET_ESP32P4",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "IDF_TARGET_ESP32H2",
         "name": "IDF_TARGET_ESP32H2",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "IDF_TARGET_ESP32C61",
+        "name": "IDF_TARGET_ESP32C61",
         "range": null,
         "title": null,
         "type": "bool"
@@ -3540,6 +4180,37 @@
     {
         "children": [
             {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "!APP_REPRODUCIBLE_BUILD",
+                        "help": "If set, then the bootloader will be built with the current time/date stamp.\nIt is stored in the bootloader description\nstructure. If not set, time/date stamp will be excluded from bootloader image.\nThis can be useful for getting the\nsame binary image files made from the same source, but at different times.",
+                        "id": "BOOTLOADER_COMPILE_TIME_DATE",
+                        "name": "BOOTLOADER_COMPILE_TIME_DATE",
+                        "range": null,
+                        "title": "Use time/date stamp for bootloader",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Project version. It is placed in \"version\" field of the esp_bootloader_desc structure.\nThe type of this field is \"uint32_t\".",
+                        "id": "BOOTLOADER_PROJECT_VER",
+                        "name": "BOOTLOADER_PROJECT_VER",
+                        "range": [
+                            0,
+                            4294967295
+                        ],
+                        "title": "Project version",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "bootloader-config-bootloader-manager",
+                "title": "Bootloader manager",
+                "type": "menu"
+            },
+            {
                 "children": [],
                 "depends_on": null,
                 "help": "Offset address that 2nd bootloader will be flashed to.\nThe value is determined by the ROM bootloader.\nIt's not configurable in ESP-IDF.",
@@ -3583,17 +4254,17 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "<choice BOOTLOADER_COMPILER_OPTIMIZATION>",
+                        "depends_on": "(IDF_TARGET_ARCH_XTENSA || IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32C2) && <choice BOOTLOADER_COMPILER_OPTIMIZATION>",
                         "help": null,
                         "id": "BOOTLOADER_COMPILER_OPTIMIZATION_NONE",
                         "name": "BOOTLOADER_COMPILER_OPTIMIZATION_NONE",
                         "range": null,
-                        "title": "Debug without optimization (-O0)",
+                        "title": "Debug without optimization (-O0) (Deprecated, will be removed in IDF v6.0)",
                         "type": "bool"
                     }
                 ],
                 "depends_on": null,
-                "help": "This option sets compiler optimization level (gcc -O argument)\nfor the bootloader.\n\n- The default \"Size\" setting will add the -0s flag to CFLAGS.\n- The \"Debug\" setting will add the -Og flag to CFLAGS.\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n- The \"None\" setting will add the -O0 flag to CFLAGS.\n\nNote that custom optimization levels may be unsupported.",
+                "help": "This option sets compiler optimization level (gcc -O argument)\nfor the bootloader.\n\n- The default \"Size\" setting will add the -0s flag to CFLAGS.\n- The \"Debug\" setting will add the -Og flag to CFLAGS.\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n\nNote that custom optimization levels may be unsupported.",
                 "id": "bootloader-config-bootloader-optimization-level",
                 "name": "BOOTLOADER_COMPILER_OPTIMIZATION",
                 "title": "Bootloader optimization Level",
@@ -3729,6 +4400,36 @@
                         "name": "BOOTLOADER_FLASH_32BIT_ADDR",
                         "range": null,
                         "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This is a helper config for 32bits address flash. Invisible for users.",
+                        "id": "BOOTLOADER_FLASH_NEEDS_32BIT_FEAT",
+                        "name": "BOOTLOADER_FLASH_NEEDS_32BIT_FEAT",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This is a helper config for 32bits address quad flash. Invisible for users.",
+                        "id": "BOOTLOADER_FLASH_NEEDS_32BIT_ADDR_QUAD_FLASH",
+                        "name": "BOOTLOADER_FLASH_NEEDS_32BIT_ADDR_QUAD_FLASH",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "BOOTLOADER_FLASH_NEEDS_32BIT_ADDR_QUAD_FLASH && IDF_EXPERIMENTAL_FEATURES",
+                        "help": "Enabling this option allows the CPU to access 32-bit-address flash beyond 16M range.\n1. This option only valid for 4-line flash. Octal flash doesn't need this.\n2. This option is experimental, which means it can\u2019t use on all flash chips stable, for more\ninformation, please contact Espressif Business support.",
+                        "id": "BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH",
+                        "name": "BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH",
+                        "range": null,
+                        "title": "Enable cache access to 32-bit-address (over 16MB) range of SPI Flash (READ DOCS FIRST)",
                         "type": "bool"
                     },
                     {
@@ -3924,7 +4625,7 @@
                     {
                         "children": [],
                         "depends_on": "BOOTLOADER_WDT_ENABLE",
-                        "help": "If this option is set, the ESP-IDF app must explicitly reset, feed, or disable the rtc_wdt in\nthe app's own code.\nIf this option is not set (default), then rtc_wdt will be disabled by ESP-IDF before calling\nthe app_main() function.\n\nUse function rtc_wdt_feed() for resetting counter of rtc_wdt.\nUse function rtc_wdt_disable() for disabling rtc_wdt.",
+                        "help": "If this option is set, the ESP-IDF app must explicitly reset, feed, or disable the rtc_wdt in\nthe app's own code.\nIf this option is not set (default), then rtc_wdt will be disabled by ESP-IDF before calling\nthe app_main() function.\n\nUse function wdt_hal_feed() for resetting counter of RTC_WDT.\nFor esp32/s2 you can also use rtc_wdt_feed().\n\nUse function wdt_hal_disable() for disabling RTC_WDT.\nFor esp32/s2 you can also use rtc_wdt_disable().",
                         "id": "BOOTLOADER_WDT_DISABLE_IN_USER_CODE",
                         "name": "BOOTLOADER_WDT_DISABLE_IN_USER_CODE",
                         "range": null,
@@ -3980,7 +4681,7 @@
                             {
                                 "children": [],
                                 "depends_on": "BOOTLOADER_APP_ANTI_ROLLBACK",
-                                "help": "This option allows to emulate read/write operations with all eFuses and efuse secure version.\nIt allows to test anti-rollback implemention without permanent write eFuse bits.\nThere should be an entry in partition table with following details: `emul_efuse, data, efuse, , 0x2000`.\n\nThis option enables: EFUSE_VIRTUAL and EFUSE_VIRTUAL_KEEP_IN_FLASH.",
+                                "help": "This option allows to emulate read/write operations with all eFuses and efuse secure version.\nIt allows to test anti-rollback implementation without permanent write eFuse bits.\nThere should be an entry in partition table with following details: `emul_efuse, data, efuse, , 0x2000`.\n\nThis option enables: EFUSE_VIRTUAL and EFUSE_VIRTUAL_KEEP_IN_FLASH.",
                                 "id": "BOOTLOADER_EFUSE_SECURE_VERSION_EMULATE",
                                 "name": "BOOTLOADER_EFUSE_SECURE_VERSION_EMULATE",
                                 "range": null,
@@ -4050,7 +4751,7 @@
                     {
                         "children": [],
                         "depends_on": "BOOTLOADER_CUSTOM_RESERVE_RTC",
-                        "help": "This option allows the customer to use the legacy bootloader behavior when the\nRTC FAST memory CRC calculation takes place. When this option is enabled, the\nallocated user custom data will be taken into account in the CRC calculcation.\nThis means that any change to the custom data would need a CRC update to prevent\nthe bootloader from marking this data as corrupted.\nIf this option is disabled, the custom data will not be taken into account when\ncalculating the RTC FAST memory CRC. The user custom data can be changed freely,\nwithout the need to update the CRC.\nTHIS OPTION MUST BE THE SAME FOR BOTH THE BOOTLOADER AND THE APPLICATION BUILDS.",
+                        "help": "This option allows the customer to use the legacy bootloader behavior when the\nRTC FAST memory CRC calculation takes place. When this option is enabled, the\nallocated user custom data will be taken into account in the CRC calculation.\nThis means that any change to the custom data would need a CRC update to prevent\nthe bootloader from marking this data as corrupted.\nIf this option is disabled, the custom data will not be taken into account when\ncalculating the RTC FAST memory CRC. The user custom data can be changed freely,\nwithout the need to update the CRC.\nTHIS OPTION MUST BE THE SAME FOR BOTH THE BOOTLOADER AND THE APPLICATION BUILDS.",
                         "id": "BOOTLOADER_CUSTOM_RESERVE_RTC_IN_CRC",
                         "name": "BOOTLOADER_CUSTOM_RESERVE_RTC_IN_CRC",
                         "range": null,
@@ -4069,7 +4770,7 @@
                     }
                 ],
                 "depends_on": "SOC_RTC_FAST_MEM_SUPPORTED",
-                "help": "This option allows the customer to place data in the RTC FAST memory,\nthis area remains valid when rebooted, except for power loss.\nThis memory is located at a fixed address and is available\nfor both the bootloader and the application.\n(The application and bootoloader must be compiled with the same option).\nThe RTC FAST memory has access only through PRO_CPU.",
+                "help": "This option allows the customer to place data in the RTC FAST memory,\nthis area remains valid when rebooted, except for power loss.\nThis memory is located at a fixed address and is available\nfor both the bootloader and the application.\n(The application and bootloader must be compiled with the same option).\nThe RTC FAST memory has access only through PRO_CPU.",
                 "id": "BOOTLOADER_CUSTOM_RESERVE_RTC",
                 "name": "BOOTLOADER_CUSTOM_RESERVE_RTC",
                 "range": null,
@@ -4407,6 +5108,16 @@
                 "type": "bool"
             },
             {
+                "children": [],
+                "depends_on": "SECURE_BOOT_V2_ENABLED && SECURE_BOOT_BUILD_SIGNED_BINARIES",
+                "help": "When Secure Boot V2 is enabled, by default the bootloader is not flashed along with other artifacts\nlike the application and the partition table images, i.e. bootloader has to be separately flashed\nusing the command `idf.py bootloader flash`, whereas, the application and partition table can be flashed\nusing the command `idf.py flash` itself.\nEnabling this option allows flashing the bootloader along with the other artifacts\nby invocation of the command `idf.py flash`.\n\nIf this option is enabled make sure that even the bootloader is signed using the correct secure boot key,\notherwise the bootloader signature verification would fail, as hash of the public key which is present in\nthe bootloader signature would not match with the digest stored into the efuses\nand thus the device will not be able to boot up.",
+                "id": "SECURE_BOOT_FLASH_BOOTLOADER_DEFAULT",
+                "name": "SECURE_BOOT_FLASH_BOOTLOADER_DEFAULT",
+                "range": null,
+                "title": "Flash bootloader along with other artifacts when using the default flash command",
+                "type": "bool"
+            },
+            {
                 "children": [
                     {
                         "children": [],
@@ -4482,10 +5193,10 @@
                             }
                         ],
                         "depends_on": "SOC_FLASH_ENCRYPTION_XTS_AES_OPTIONS && SECURE_FLASH_ENC_ENABLED",
-                        "help": "Size of generated AES-XTS key.\n\n- AES-128 uses a 256-bit key (32 bytes) derived from 128 bits (16 bytes) burned in half Efuse key block.\n  Internally, it calculates SHA256(128 bits)\n- AES-128 uses a 256-bit key (32 bytes) which occupies one Efuse key block.\n- AES-256 uses a 512-bit key (64 bytes) which occupies two Efuse key blocks.\n\nThis setting is ignored if either type of key is already burned to Efuse before the first boot.\nIn this case, the pre-burned key is used and no new key is generated.",
-                        "id": "security-features-enable-flash-encryption-on-boot-read-docs-first--size-of-generated-aes-xts-key",
+                        "help": "Size of generated XTS-AES key.\n\n- AES-128 uses a 256-bit key (32 bytes) derived from 128 bits (16 bytes) burned in half Efuse key block.\n  Internally, it calculates SHA256(128 bits)\n- AES-128 uses a 256-bit key (32 bytes) which occupies one Efuse key block.\n- AES-256 uses a 512-bit key (64 bytes) which occupies two Efuse key blocks.\n\nThis setting is ignored if either type of key is already burned to Efuse before the first boot.\nIn this case, the pre-burned key is used and no new key is generated.",
+                        "id": "security-features-enable-flash-encryption-on-boot-read-docs-first--size-of-generated-xts-aes-key",
                         "name": "SECURE_FLASH_ENCRYPTION_KEYSIZE",
-                        "title": "Size of generated AES-XTS key",
+                        "title": "Size of generated XTS-AES key",
                         "type": "choice"
                     },
                     {
@@ -4582,7 +5293,7 @@
                     {
                         "children": [],
                         "depends_on": "SECURE_BOOT_INSECURE && SOC_EFUSE_REVOKE_BOOT_KEY_DIGESTS",
-                        "help": "If not set (default), during startup in the app all unused digest slots will be revoked.\nTo revoke unused slot will be called esp_efuse_set_digest_revoke(num_digest) for each digest.\nRevoking unused digest slots makes ensures that no trusted keys can be added later by an attacker.\nIf set, it means that you have a plan to use unused digests slots later.",
+                        "help": "If not set (default), during startup in the app all unused digest slots will be revoked.\nTo revoke unused slot will be called esp_efuse_set_digest_revoke(num_digest) for each digest.\nRevoking unused digest slots makes ensures that no trusted keys can be added later by an attacker.\nIf set, it means that you have a plan to use unused digests slots later.\n\nNote that if you plan to enable secure boot during the first boot up, the bootloader will intentionally\nrevoke the unused digest slots while enabling secure boot, even if the above config is enabled because\nkeeping the unused key slots un-revoked would a security hazard.\nIn case for any development workflow if you need to avoid this revocation, you should enable\nsecure boot externally (host based mechanism) rather than enabling it during the boot up,\nso that the bootloader would not need to enable secure boot and thus you could avoid its revocation\nstrategy.",
                         "id": "SECURE_BOOT_ALLOW_UNUSED_DIGEST_SLOTS",
                         "name": "SECURE_BOOT_ALLOW_UNUSED_DIGEST_SLOTS",
                         "range": null,
@@ -4648,7 +5359,7 @@
             {
                 "children": [],
                 "depends_on": "SECURE_FLASH_ENC_ENABLED && !SECURE_FLASH_REQUIRE_ALREADY_ENABLED",
-                "help": "If set, optimise encryption time for the partition of type APP,\nby only encrypting the app image that is present in the partition,\ninstead of the whole partition.\nThe image length used for encryption is derived from the image metadata, which\nincludes the size of the app image, checksum, hash and also the signature sector\nwhen secure boot is enabled.\n\nIf not set (default), the whole partition of type APP would be encrypted,\nwhich increases the encryption time but might be useful if there\nis any custom data appended to the firmware image.",
+                "help": "If set (default), optimise encryption time for the partition of type APP,\nby only encrypting the app image that is present in the partition,\ninstead of the whole partition.\nThe image length used for encryption is derived from the image metadata, which\nincludes the size of the app image, checksum, hash and also the signature sector\nwhen secure boot is enabled.\n\nIf not set, the whole partition of type APP would be encrypted,\nwhich increases the encryption time but might be useful if there\nis any custom data appended to the firmware image.",
                 "id": "SECURE_FLASH_ENCRYPT_ONLY_IMAGE_LEN_IN_APP_PART",
                 "name": "SECURE_FLASH_ENCRYPT_ONLY_IMAGE_LEN_IN_APP_PART",
                 "range": null,
@@ -4664,6 +5375,67 @@
                 "range": null,
                 "title": "Check Flash Encryption enabled on app startup",
                 "type": "bool"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "<choice SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH>",
+                                "help": null,
+                                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_LOW",
+                                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_LOW",
+                                "range": null,
+                                "title": "Low",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH>",
+                                "help": null,
+                                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_MEDIUM",
+                                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_MEDIUM",
+                                "range": null,
+                                "title": "Medium",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH>",
+                                "help": null,
+                                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_HIGH",
+                                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH_HIGH",
+                                "range": null,
+                                "title": "High",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": "SECURE_FLASH_PSEUDO_ROUND_FUNC",
+                        "help": "The strength of the pseudo rounds functions can be configured to low, medium and high,\neach denoting the values that would be stored in the efuses field.\nBy default the value to set to low.\nYou can configure the strength of the pseudo rounds functions according to your use cases,\nfor example, increasing the strength would provide higher security but would slow down the\nflash encryption/decryption operations.\nFor more info regarding the performance impact, please checkout the pseudo round function section of the\nsecurity guide documentation.",
+                        "id": "security-features-permanently-enable-xts-aes-s-pseudo-rounds-function-strength-of-the-pseudo-rounds-function",
+                        "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH",
+                        "title": "Strength of the pseudo rounds function",
+                        "type": "choice"
+                    }
+                ],
+                "depends_on": "SECURE_FLASH_ENCRYPTION_MODE_RELEASE && SOC_FLASH_ENCRYPTION_XTS_AES_SUPPORT_PSEUDO_ROUND",
+                "help": "If set (default), the bootloader will permanently enable the XTS-AES peripheral's pseudo rounds function.\nNote: Enabling this config would burn an efuse.",
+                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC",
+                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC",
+                "range": null,
+                "title": "Permanently enable XTS-AES's pseudo rounds function",
+                "type": "bool"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH",
+                "name": "SECURE_FLASH_PSEUDO_ROUND_FUNC_STRENGTH",
+                "range": null,
+                "title": null,
+                "type": "int"
             },
             {
                 "children": [],
@@ -4725,7 +5497,7 @@
         "children": [
             {
                 "children": [],
-                "depends_on": null,
+                "depends_on": "!APP_REPRODUCIBLE_BUILD",
                 "help": "If set, then the app will be built with the current time/date stamp. It is stored in the app description\nstructure. If not set, time/date stamp will be excluded from app image. This can be useful for getting the\nsame binary image files made from the same source, but at different times.",
                 "id": "APP_COMPILE_TIME_DATE",
                 "name": "APP_COMPILE_TIME_DATE",
@@ -4777,7 +5549,7 @@
             {
                 "children": [],
                 "depends_on": null,
-                "help": "At startup, the app will read this many hex characters from the embedded APP ELF SHA-256 hash value\nand store it in static RAM. This ensures the app ELF SHA-256 value is always available\nif it needs to be printed by the panic handler code.\nChanging this value will change the size of a static buffer, in bytes.",
+                "help": "At startup, the app will read the embedded APP ELF SHA-256 hash value from flash\nand convert it into a string and store it in a RAM buffer.\nThis ensures the panic handler and core dump will be able to print this string\neven when cache is disabled.\nThe size of the buffer is APP_RETRIEVE_LEN_ELF_SHA plus the null terminator.\nChanging this value will change the size of this buffer, in bytes.",
                 "id": "APP_RETRIEVE_LEN_ELF_SHA",
                 "name": "APP_RETRIEVE_LEN_ELF_SHA",
                 "range": [
@@ -4917,6 +5689,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "ESP_ROM_MULTI_HEAP_WALK_PATCH",
+        "name": "ESP_ROM_MULTI_HEAP_WALK_PATCH",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "ESP_ROM_HAS_LAYOUT_TABLE",
         "name": "ESP_ROM_HAS_LAYOUT_TABLE",
         "range": null,
@@ -4939,6 +5721,16 @@
         "help": null,
         "id": "ESP_ROM_HAS_REGI2C_BUG",
         "name": "ESP_ROM_HAS_REGI2C_BUG",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "ESP_ROM_HAS_NEWLIB",
+        "name": "ESP_ROM_HAS_NEWLIB",
         "range": null,
         "title": null,
         "type": "bool"
@@ -4989,6 +5781,46 @@
         "help": null,
         "id": "ESP_ROM_RAM_APP_NEEDS_MMU_INIT",
         "name": "ESP_ROM_RAM_APP_NEEDS_MMU_INIT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "ESP_ROM_HAS_SW_FLOAT",
+        "name": "ESP_ROM_HAS_SW_FLOAT",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "ESP_ROM_USB_OTG_NUM",
+        "name": "ESP_ROM_USB_OTG_NUM",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "ESP_ROM_HAS_VERSION",
+        "name": "ESP_ROM_HAS_VERSION",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "ESP_ROM_SUPPORT_DEEP_SLEEP_WAKEUP_STUB",
+        "name": "ESP_ROM_SUPPORT_DEEP_SLEEP_WAKEUP_STUB",
         "range": null,
         "title": null,
         "type": "bool"
@@ -5325,6 +6157,16 @@
             },
             {
                 "children": [],
+                "depends_on": "IDF_TARGET_ESP32P4 && !APP_BUILD_TYPE_PURE_RAM_APP",
+                "help": null,
+                "id": "ESPTOOLPY_FLASHFREQ_VAL",
+                "name": "ESPTOOLPY_FLASHFREQ_VAL",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
                 "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
                 "help": "This is an invisible item, used to define the targets that defaults to use 80MHz Flash SPI speed.",
                 "id": "ESPTOOLPY_FLASHFREQ_80M_DEFAULT",
@@ -5595,7 +6437,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "!ESP32_COREDUMP_ENABLE_TO_FLASH && NVS_ENCRYPTION && <choice PARTITION_TABLE_TYPE>",
+                        "depends_on": "!ESP32_COREDUMP_ENABLE_TO_FLASH && NVS_SEC_KEY_PROTECT_USING_FLASH_ENC && <choice PARTITION_TABLE_TYPE>",
                         "help": "This is a variation of the default \"Single factory app, no OTA\" partition table\nthat supports encrypted NVS when using flash encryption. See the Flash Encryption section\nin the ESP-IDF Programmers Guide for more information.\n\nThe corresponding CSV file in the IDF directory is\ncomponents/partition_table/partitions_singleapp_encr_nvs.csv",
                         "id": "PARTITION_TABLE_SINGLE_APP_ENCRYPTED_NVS",
                         "name": "PARTITION_TABLE_SINGLE_APP_ENCRYPTED_NVS",
@@ -5605,7 +6447,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "!ESP32_COREDUMP_ENABLE_TO_FLASH && NVS_ENCRYPTION && <choice PARTITION_TABLE_TYPE>",
+                        "depends_on": "!ESP32_COREDUMP_ENABLE_TO_FLASH && NVS_SEC_KEY_PROTECT_USING_FLASH_ENC && <choice PARTITION_TABLE_TYPE>",
                         "help": "This is a variation of the \"Single factory app (large), no OTA\" partition table\nthat supports encrypted NVS when using flash encryption. See the Flash Encryption section\nin the ESP-IDF Programmers Guide for more information.\n\nThe corresponding CSV file in the IDF directory is\ncomponents/partition_table/partitions_singleapp_large_encr_nvs.csv",
                         "id": "PARTITION_TABLE_SINGLE_APP_LARGE_ENC_NVS",
                         "name": "PARTITION_TABLE_SINGLE_APP_LARGE_ENC_NVS",
@@ -5615,7 +6457,7 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "!ESP_COREDUMP_ENABLE_TO_FLASH && NVS_ENCRYPTION && <choice PARTITION_TABLE_TYPE>",
+                        "depends_on": "!ESP_COREDUMP_ENABLE_TO_FLASH && NVS_SEC_KEY_PROTECT_USING_FLASH_ENC && <choice PARTITION_TABLE_TYPE>",
                         "help": "This is a variation of the \"Factory app, two OTA definitions\" partition table\nthat supports encrypted NVS when using flash encryption. See the Flash Encryption section\nin the ESP-IDF Programmers Guide for more information.\n\nThe corresponding CSV file in the IDF directory is\ncomponents/partition_table/partitions_two_ota_encr_nvs.csv",
                         "id": "PARTITION_TABLE_TWO_OTA_ENCRYPTED_NVS",
                         "name": "PARTITION_TABLE_TWO_OTA_ENCRYPTED_NVS",
@@ -5634,7 +6476,7 @@
             {
                 "children": [],
                 "depends_on": null,
-                "help": "Name of the custom partition CSV filename. This path is evaluated\nrelative to the project root directory.",
+                "help": "Name of the custom partition CSV filename.\nThis path is evaluated relative to the project root directory by default.\nHowever, if the absolute path for the CSV file is provided, then the absolute path is configured.",
                 "id": "PARTITION_TABLE_CUSTOM_FILENAME",
                 "name": "PARTITION_TABLE_CUSTOM_FILENAME",
                 "range": null,
@@ -5685,8 +6527,8 @@
                         "children": [],
                         "depends_on": "<choice COMPILER_OPTIMIZATION>",
                         "help": null,
-                        "id": "COMPILER_OPTIMIZATION_DEFAULT",
-                        "name": "COMPILER_OPTIMIZATION_DEFAULT",
+                        "id": "COMPILER_OPTIMIZATION_DEBUG",
+                        "name": "COMPILER_OPTIMIZATION_DEBUG",
                         "range": null,
                         "title": "Debug (-Og)",
                         "type": "bool"
@@ -5723,7 +6565,7 @@
                     }
                 ],
                 "depends_on": null,
-                "help": "This option sets compiler optimization level (gcc -O argument) for the app.\n\n- The \"Default\" setting will add the -0g flag to CFLAGS.\n- The \"Size\" setting will add the -0s flag to CFLAGS.\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n- The \"None\" setting will add the -O0 flag to CFLAGS.\n\nThe \"Size\" setting cause the compiled code to be smaller and faster, but\nmay lead to difficulties of correlating code addresses to source file\nlines when debugging.\n\nThe \"Performance\" setting causes the compiled code to be larger and faster,\nbut will be easier to correlated code addresses to source file lines.\n\n\"None\" with -O0 produces compiled code without optimization.\n\nNote that custom optimization levels may be unsupported.\n\nCompiler optimization for the IDF bootloader is set separately,\nsee the BOOTLOADER_COMPILER_OPTIMIZATION setting.",
+                "help": "This option sets compiler optimization level (gcc -O argument) for the app.\n\n- The \"Debug\" setting will add the -0g flag to CFLAGS.\n- The \"Size\" setting will add the -0s flag to CFLAGS.\n- The \"Performance\" setting will add the -O2 flag to CFLAGS.\n- The \"None\" setting will add the -O0 flag to CFLAGS.\n\nThe \"Size\" setting cause the compiled code to be smaller and faster, but\nmay lead to difficulties of correlating code addresses to source file\nlines when debugging.\n\nThe \"Performance\" setting causes the compiled code to be larger and faster,\nbut will be easier to correlated code addresses to source file lines.\n\n\"None\" with -O0 produces compiled code without optimization.\n\nNote that custom optimization levels may be unsupported.\n\nCompiler optimization for the IDF bootloader is set separately,\nsee the BOOTLOADER_COMPILER_OPTIMIZATION setting.",
                 "id": "compiler-options-optimization-level",
                 "name": "COMPILER_OPTIMIZATION",
                 "title": "Optimization Level",
@@ -5924,6 +6766,16 @@
             },
             {
                 "children": [],
+                "depends_on": "IDF_TOOLCHAIN_GCC",
+                "help": "Disable merging identical constants (string/floating-point) across compilation units.\nThis helps in better size analysis of the application binary as the rodata section\ndistribution is more uniform across libraries. On downside, it may increase\nthe binary size and hence should be used during development phase only.",
+                "id": "COMPILER_NO_MERGE_CONSTANTS",
+                "name": "COMPILER_NO_MERGE_CONSTANTS",
+                "range": null,
+                "title": "Disable merging const sections",
+                "type": "bool"
+            },
+            {
+                "children": [],
                 "depends_on": null,
                 "help": "Adds -Wwrite-strings flag for the C/C++ compilers.\n\nFor C, this gives string constants the type ``const char[]`` so that\ncopying the address of one into a non-const ``char *`` pointer\nproduces a warning. This warning helps to find at compile time code\nthat tries to write into a string constant.\n\nFor C++, this warns about the deprecated conversion from string\nliterals to ``char *``.",
                 "id": "COMPILER_WARN_WRITE_STRINGS",
@@ -5955,12 +6807,102 @@
             {
                 "children": [],
                 "depends_on": null,
+                "help": "Enable this option if use GCC 13 or newer, and want to disable warnings which don't appear with\nGCC 12.",
+                "id": "COMPILER_DISABLE_GCC13_WARNINGS",
+                "name": "COMPILER_DISABLE_GCC13_WARNINGS",
+                "range": null,
+                "title": "Disable new warnings introduced in GCC 13",
+                "type": "bool"
+            },
+            {
+                "children": [],
+                "depends_on": null,
                 "help": "If enabled, RTL files will be produced during compilation. These files\ncan be used by other tools, for example to calculate call graphs.",
                 "id": "COMPILER_DUMP_RTL_FILES",
                 "name": "COMPILER_DUMP_RTL_FILES",
                 "range": null,
                 "title": "Dump RTL files during compilation",
                 "type": "bool"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "!IDF_TARGET_LINUX && <choice COMPILER_RT_LIB>",
+                        "help": null,
+                        "id": "COMPILER_RT_LIB_GCCLIB",
+                        "name": "COMPILER_RT_LIB_GCCLIB",
+                        "range": null,
+                        "title": "libgcc",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "IDF_TOOLCHAIN_CLANG && !IDF_TARGET_LINUX && <choice COMPILER_RT_LIB>",
+                        "help": null,
+                        "id": "COMPILER_RT_LIB_CLANGRT",
+                        "name": "COMPILER_RT_LIB_CLANGRT",
+                        "range": null,
+                        "title": "libclang_rt",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "IDF_TARGET_LINUX && <choice COMPILER_RT_LIB>",
+                        "help": null,
+                        "id": "COMPILER_RT_LIB_HOST",
+                        "name": "COMPILER_RT_LIB_HOST",
+                        "range": null,
+                        "title": "Host",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Select runtime library to be used by compiler.\n- GCC toolchain supports libgcc only.\n- Clang allows to choose between libgcc or libclang_rt.\n- For host builds (\"linux\" target), uses the default library.",
+                "id": "compiler-options-compiler-runtime-library",
+                "name": "COMPILER_RT_LIB",
+                "title": "Compiler runtime library",
+                "type": "choice"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "COMPILER_RT_LIB_NAME",
+                "name": "COMPILER_RT_LIB_NAME",
+                "range": null,
+                "title": null,
+                "type": "string"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice COMPILER_ORPHAN_SECTIONS>",
+                        "help": "Places orphan sections with a warning message.",
+                        "id": "COMPILER_ORPHAN_SECTIONS_WARNING",
+                        "name": "COMPILER_ORPHAN_SECTIONS_WARNING",
+                        "range": null,
+                        "title": "Place with warning",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice COMPILER_ORPHAN_SECTIONS>",
+                        "help": "Places orphan sections without a warning/error message.",
+                        "id": "COMPILER_ORPHAN_SECTIONS_PLACE",
+                        "name": "COMPILER_ORPHAN_SECTIONS_PLACE",
+                        "range": null,
+                        "title": "Place silently",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": "!IDF_TARGET_LINUX",
+                "help": "If the linker finds orphan sections, it attempts to place orphan sections after sections of the same\nattribute such as code vs data, loadable vs non-loadable, etc.\nThat means that orphan sections could placed between sections defined in IDF linker scripts.\nThis could lead to corruption of the binary image. Configure the linker action here.",
+                "id": "compiler-options-orphan-sections-handling",
+                "name": "COMPILER_ORPHAN_SECTIONS",
+                "title": "Orphan sections handling",
+                "type": "choice"
             }
         ],
         "depends_on": null,
@@ -6184,6 +7126,26 @@
                             },
                             {
                                 "children": [],
+                                "depends_on": null,
+                                "help": "Required minimum eFuse Block revision. ESP-IDF will check it at the 2nd bootloader stage\nwhether the current image can work correctly for this eFuse Block revision.\nSo that to avoid running an incompatible image on a SoC that contains breaking change in the eFuse Block.\nIf you want to update this value to run the image that not compatible with the current eFuse Block revision,\nplease contact to Espressif's business team for details:\nhttps://www.espressif.com.cn/en/contact-us/sales-questions",
+                                "id": "ESP_EFUSE_BLOCK_REV_MIN_FULL",
+                                "name": "ESP_EFUSE_BLOCK_REV_MIN_FULL",
+                                "range": null,
+                                "title": "Minimum Supported ESP32-C6 eFuse Block Revision",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "ESP_EFUSE_BLOCK_REV_MAX_FULL",
+                                "name": "ESP_EFUSE_BLOCK_REV_MAX_FULL",
+                                "range": null,
+                                "title": null,
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
                                 "depends_on": "IDF_CI_BUILD",
                                 "help": "For internal chip testing, a small number of new versions chips didn't\nupdate the version field in eFuse, you can enable this option to force the\nsoftware recognize the chip version based on the rev selected in menuconfig.",
                                 "id": "ESP_REV_NEW_CHIP_TEST",
@@ -6281,6 +7243,16 @@
                                 "type": "bool"
                             },
                             {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "ESP_MAC_UNIVERSAL_MAC_ADDRESSES",
+                                "name": "ESP_MAC_UNIVERSAL_MAC_ADDRESSES",
+                                "range": null,
+                                "title": null,
+                                "type": "int"
+                            },
+                            {
                                 "children": [
                                     {
                                         "children": [],
@@ -6350,17 +7322,17 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "!SPIRAM",
+                                "depends_on": "(!SPIRAM || ESP_LDO_RESERVE_PSRAM) && !(IDF_TARGET_ESP32P4 && ESP32P4_REV_MIN_FULL < 100)",
                                 "help": "If enabled, chip will try to power down flash as part of esp_light_sleep_start(), which costs\nmore time when chip wakes up. Can only be enabled if there is no SPIRAM configured.\n\nThis option will power down flash under a strict but relatively safe condition. Also, it is possible to\npower down flash under a relaxed condition by using esp_sleep_pd_config() to set ESP_PD_DOMAIN_VDDSDIO\nto ESP_PD_OPTION_OFF. It should be noted that there is a risk in powering down flash, you can refer\n`ESP-IDF Programming Guide/API Reference/System API/Sleep Modes/Power-down of Flash` for more details.",
                                 "id": "ESP_SLEEP_POWER_DOWN_FLASH",
                                 "name": "ESP_SLEEP_POWER_DOWN_FLASH",
                                 "range": null,
-                                "title": "Power down flash in light sleep when there is no SPIRAM",
+                                "title": "Power down flash in light sleep when there is no SPIRAM or SPIRAM has independent power supply",
                                 "type": "bool"
                             },
                             {
                                 "children": [],
-                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP && !ESP_SLEEP_POWER_DOWN_FLASH",
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
                                 "help": "All IOs will be set to isolate(floating) state by default during sleep.\nSince the power supply of SPI Flash is not lost during lightsleep, if its CS pin is recognized as\nlow level(selected state) in the floating state, there will be a large current leakage, and the\ndata in Flash may be corrupted by random signals on other SPI pins.\nSelect this option will set the CS pin of Flash to PULL-UP state during sleep, but this will\nincrease the sleep current about 10 uA.\nIf you are developing with esp32xx modules, you must select this option, but if you are developing\nwith chips, you can also pull up the CS pin of SPI Flash in the external circuit to save power\nconsumption caused by internal pull-up during sleep.\n(!!! Don't deselect this option if you don't have external SPI Flash CS pin pullups.)",
                                 "id": "ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND",
                                 "name": "ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND",
@@ -6380,7 +7352,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "!ESP_SLEEP_POWER_DOWN_FLASH && (ESP_SLEEP_PSRAM_LEAKAGE_WORKAROUND || ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND)",
+                                "depends_on": "ESP_SLEEP_PSRAM_LEAKAGE_WORKAROUND || ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND",
                                 "help": "To reduce leakage current, some types of SPI Flash/RAM only need to pull up the CS pin\nduring light sleep. But there are also some kinds of SPI Flash/RAM that need to pull up\nall pins. It depends on the SPI Flash/RAM chip used.",
                                 "id": "ESP_SLEEP_MSPI_NEED_ALL_IO_PU",
                                 "name": "ESP_SLEEP_MSPI_NEED_ALL_IO_PU",
@@ -6424,6 +7396,16 @@
                             {
                                 "children": [],
                                 "depends_on": null,
+                                "help": "Enabling it will check the cache safety of the code before the flash power is ready after\nlight sleep wakeup, and check PM_SLP_IRAM_OPT related code cache safety. This option is\nonly for code quality inspection. Enabling it will increase the time overhead of entering\nand exiting sleep. It is not recommended to enable it in the release version.",
+                                "id": "ESP_SLEEP_CACHE_SAFE_ASSERTION",
+                                "name": "ESP_SLEEP_CACHE_SAFE_ASSERTION",
+                                "range": null,
+                                "title": "Check the cache safety of the sleep wakeup code in sleep process",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
                                 "help": "Enable esp sleep debug.",
                                 "id": "ESP_SLEEP_DEBUG",
                                 "name": "ESP_SLEEP_DEBUG",
@@ -6450,39 +7432,11 @@
                                 "range": null,
                                 "title": "Enable registration of sleep event callbacks",
                                 "type": "bool"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": null,
-                                "help": "Enabling it will check the cache safety of the code before the flash power is ready after\nlight sleep wakeup, and check PM_SLP_IRAM_OPT related code cache safety. This option is\nonly for code quality inspection. Enabling it will increase the time overhead of entering\nand exiting sleep. It is not recommended to enable it in the release version.",
-                                "id": "ESP_SLEEP_CACHE_SAFE_ASSERTION",
-                                "name": "ESP_SLEEP_CACHE_SAFE_ASSERTION",
-                                "range": null,
-                                "title": "Check the cache safety of the sleep wakeup code in sleep process",
-                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
                         "id": "component-config-hardware-settings-sleep-config",
                         "title": "Sleep Config",
-                        "type": "menu"
-                    },
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "depends_on": "IDF_TARGET_ESP32C3",
-                                "help": "Its not able to stall ESP32C3 systimer in sleep.\nTo fix related RTOS TICK issue, select it to disable related systimer during sleep.\nTODO: IDF-7036",
-                                "id": "ESP_SLEEP_SYSTIMER_STALL_WORKAROUND",
-                                "name": "ESP_SLEEP_SYSTIMER_STALL_WORKAROUND",
-                                "range": null,
-                                "title": "ESP32C3 SYSTIMER Stall Issue Workaround",
-                                "type": "bool"
-                            }
-                        ],
-                        "depends_on": null,
-                        "id": "component-config-hardware-settings-esp_sleep_workaround",
-                        "title": "ESP_SLEEP_WORKAROUND",
                         "type": "menu"
                     },
                     {
@@ -6496,7 +7450,7 @@
                                         "id": "RTC_CLK_SRC_INT_RC",
                                         "name": "RTC_CLK_SRC_INT_RC",
                                         "range": null,
-                                        "title": "Internal 136kHz RC oscillator",
+                                        "title": "Internal 150 kHz RC oscillator",
                                         "type": "bool"
                                     },
                                     {
@@ -6521,12 +7475,12 @@
                                     },
                                     {
                                         "children": [],
-                                        "depends_on": "<choice RTC_CLK_SRC>",
-                                        "help": null,
+                                        "depends_on": "RTC_CLK_SRC_USE_DANGEROUS_RC32K_ALLOWED && <choice RTC_CLK_SRC>",
+                                        "help": "To be able to select this option, please select `RTC_CLK_SRC_USE_DANGEROUS_RC32K_ALLOWED` first.\nThis option will be removed in IDF v6.0.",
                                         "id": "RTC_CLK_SRC_INT_RC32K",
                                         "name": "RTC_CLK_SRC_INT_RC32K",
                                         "range": null,
-                                        "title": "Internal 32kHz RC oscillator",
+                                        "title": "Internal 32kHz RC oscillator (NOT RECOMMENDED TO USE, READ DOCS FIRST)",
                                         "type": "bool"
                                     }
                                 ],
@@ -6536,6 +7490,16 @@
                                 "name": "RTC_CLK_SRC",
                                 "title": "RTC clock source",
                                 "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Internal RC32K clock is unstable at extreme temperatures and is not recommended for use.",
+                                "id": "RTC_CLK_SRC_USE_DANGEROUS_RC32K_ALLOWED",
+                                "name": "RTC_CLK_SRC_USE_DANGEROUS_RC32K_ALLOWED",
+                                "range": null,
+                                "title": "Confirm to use the unrecommended 32 kHz RC oscillator (READ DOCS FIRST)",
+                                "type": "bool"
                             },
                             {
                                 "children": [],
@@ -6579,7 +7543,7 @@
                             {
                                 "children": [],
                                 "depends_on": "SOC_ETM_SUPPORTED",
-                                "help": "Wether to enable the debug log message for ETM core driver.\nNote that, this option only controls the ETM related driver log, won't affect other drivers.",
+                                "help": "whether to enable the debug log message for ETM core driver.\nNote that, this option only controls the ETM related driver log, won't affect other drivers.",
                                 "id": "ETM_ENABLE_DEBUG_LOG",
                                 "name": "ETM_ENABLE_DEBUG_LOG",
                                 "range": null,
@@ -6597,11 +7561,11 @@
                             {
                                 "children": [],
                                 "depends_on": "SOC_GDMA_SUPPORTED",
-                                "help": "Place GDMA control functions (like start/stop/append/reset) into IRAM,\nso that these functions can be IRAM-safe and able to be called in the other IRAM interrupt context.\nEnabling this option can improve driver performance as well.",
+                                "help": "Place GDMA control functions (like start/stop/append/reset) into IRAM,\nso that these functions can be IRAM-safe and able to be called in the other IRAM interrupt context.",
                                 "id": "GDMA_CTRL_FUNC_IN_IRAM",
                                 "name": "GDMA_CTRL_FUNC_IN_IRAM",
                                 "range": null,
-                                "title": "Place GDMA control functions into IRAM",
+                                "title": "Place GDMA control functions in IRAM",
                                 "type": "bool"
                             },
                             {
@@ -6613,11 +7577,117 @@
                                 "range": null,
                                 "title": "GDMA ISR IRAM-Safe",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_GDMA_SUPPORTED",
+                                "help": "Whether to enable the debug log message for GDMA driver.\nNote that, this option only controls the GDMA driver log, won't affect other drivers.",
+                                "id": "GDMA_ENABLE_DEBUG_LOG",
+                                "name": "GDMA_ENABLE_DEBUG_LOG",
+                                "range": null,
+                                "title": "Enable debug log",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "SOC_GDMA_SUPPORTED",
-                        "id": "component-config-hardware-settings-gdma-configuration",
-                        "title": "GDMA Configuration",
+                        "id": "component-config-hardware-settings-gdma-configurations",
+                        "title": "GDMA Configurations",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                                "help": "Place DW_GDMA control functions (e.g. dw_gdma_channel_continue) into IRAM,\nso that these functions can be IRAM-safe and able to be called in the other IRAM interrupt context.",
+                                "id": "DW_GDMA_CTRL_FUNC_IN_IRAM",
+                                "name": "DW_GDMA_CTRL_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                                "help": "Place DW_GDMA setter functions (e.g. dw_gdma_channel_set_block_markers) into IRAM,\nso that these functions can be IRAM-safe and able to be called in the other IRAM interrupt context.",
+                                "id": "DW_GDMA_SETTER_FUNC_IN_IRAM",
+                                "name": "DW_GDMA_SETTER_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                                "help": "Place DW_GDMA getter functions (e.g. dw_gdma_link_list_get_item) into IRAM,\nso that these functions can be IRAM-safe and able to be called in the other IRAM interrupt context.",
+                                "id": "DW_GDMA_GETTER_FUNC_IN_IRAM",
+                                "name": "DW_GDMA_GETTER_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                                "help": "This will ensure the DW_GDMA interrupt handler is IRAM-Safe, allow to avoid flash\ncache misses, and also be able to run whilst the cache is disabled.\n(e.g. SPI Flash write).",
+                                "id": "DW_GDMA_ISR_IRAM_SAFE",
+                                "name": "DW_GDMA_ISR_IRAM_SAFE",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                                "help": "This will ensure the DW_GDMA object is DRAM-Safe, allow to avoid external memory\ncache misses, and also be accessible whilst the cache is disabled.",
+                                "id": "DW_GDMA_OBJ_DRAM_SAFE",
+                                "name": "DW_GDMA_OBJ_DRAM_SAFE",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                                "help": "Whether to enable the debug log message for DW_GDMA driver.\nNote that, this option only controls the DW_GDMA driver log, won't affect other drivers.",
+                                "id": "DW_GDMA_ENABLE_DEBUG_LOG",
+                                "name": "DW_GDMA_ENABLE_DEBUG_LOG",
+                                "range": null,
+                                "title": "Enable debug log",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": "SOC_DW_GDMA_SUPPORTED",
+                        "id": "component-config-hardware-settings-dw_gdma-configurations",
+                        "title": "DW_GDMA Configurations",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DMA2D_SUPPORTED",
+                                "help": "Place 2D-DMA all operation functions, including control functions (e.g. start/stop/append/reset) and setter\nfunctions (e.g. connect/strategy/callback registration) into IRAM, so that these functions can be IRAM-safe\nand able to be called in the other IRAM interrupt context. It also helps optimizing the performance.",
+                                "id": "DMA2D_OPERATION_FUNC_IN_IRAM",
+                                "name": "DMA2D_OPERATION_FUNC_IN_IRAM",
+                                "range": null,
+                                "title": "Place 2D-DMA operation functions into IRAM",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SOC_DMA2D_SUPPORTED",
+                                "help": "This will ensure the 2D-DMA interrupt handler is IRAM-Safe, allow to avoid flash\ncache misses, and also be able to run whilst the cache is disabled.\n(e.g. SPI Flash write).",
+                                "id": "DMA2D_ISR_IRAM_SAFE",
+                                "name": "DMA2D_ISR_IRAM_SAFE",
+                                "range": null,
+                                "title": "2D-DMA ISR IRAM-Safe",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": "SOC_DMA2D_SUPPORTED",
+                        "id": "component-config-hardware-settings-2d-dma-configurations",
+                        "title": "2D-DMA Configurations",
                         "type": "menu"
                     },
                     {
@@ -6662,6 +7732,16 @@
                                         "name": "XTAL_FREQ_40",
                                         "range": null,
                                         "title": "40 MHz",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "SOC_XTAL_SUPPORT_48M && <choice XTAL_FREQ_SEL>",
+                                        "help": null,
+                                        "id": "XTAL_FREQ_48",
+                                        "name": "XTAL_FREQ_48",
+                                        "range": null,
+                                        "title": "48 MHz",
                                         "type": "bool"
                                     },
                                     {
@@ -6766,6 +7846,56 @@
                         "id": "component-config-hardware-settings-crypto-dpa-protection",
                         "title": "Crypto DPA Protection",
                         "type": "menu"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "SOC_ECC_CONSTANT_TIME_POINT_MUL",
+                        "help": "If enabled, the app startup code will burn the ECC_FORCE_CONST_TIME efuse bit to force the\nECC peripheral to always perform constant time point multiplication operations,\nirrespective of the ECC_MULT_SECURITY_MODE status bit that is present in the ECC_MULT_CONF_REG\nregister. By default, ESP-IDF configures the ECC peripheral to perform constant time point\nmultiplication operations, so enabling this config would provide security enhancement only in\nthe cases when trusted boot is not enabled and the attacker tries carrying out non-constant\ntime point multiplication operations by changing the default ESP-IDF configurations.\nPerforming constant time operations protect the ECC multiplication operations from timing attacks.",
+                        "id": "ESP_CRYPTO_FORCE_ECC_CONSTANT_TIME_POINT_MUL",
+                        "name": "ESP_CRYPTO_FORCE_ECC_CONSTANT_TIME_POINT_MUL",
+                        "range": null,
+                        "title": "Forcefully enable ECC constant time point multiplication operations",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option is only used for new chip bringup, when\nclock support isn't done yet. So with this option,\nwe use xtal on FPGA as the clock source.",
+                        "id": "ESP_BRINGUP_BYPASS_CPU_CLK_SETTING",
+                        "name": "ESP_BRINGUP_BYPASS_CPU_CLK_SETTING",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option is only used for new chip bringup, when\nRNG isn't done yet. So with this option, we use 0x5A\nto fill the random buffers",
+                        "id": "ESP_BRINGUP_BYPASS_RANDOM_SETTING",
+                        "name": "ESP_BRINGUP_BYPASS_RANDOM_SETTING",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "ESP_SPI_BUS_LOCK_ISR_FUNCS_IN_IRAM",
+                        "name": "ESP_SPI_BUS_LOCK_ISR_FUNCS_IN_IRAM",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "ESP_SPI_BUS_LOCK_FUNCS_IN_IRAM",
+                        "name": "ESP_SPI_BUS_LOCK_FUNCS_IN_IRAM",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -6839,7 +7969,7 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "<choice ESP_SYSTEM_PANIC>",
+                                "depends_on": "!ESP_SYSTEM_GDBSTUB_RUNTIME && <choice ESP_SYSTEM_PANIC>",
                                 "help": "Outputs the relevant registers over the serial port and halt the\nprocessor. Needs a manual reset to restart.",
                                 "id": "ESP_SYSTEM_PANIC_PRINT_HALT",
                                 "name": "ESP_SYSTEM_PANIC_PRINT_HALT",
@@ -6849,7 +7979,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "<choice ESP_SYSTEM_PANIC>",
+                                "depends_on": "!ESP_SYSTEM_GDBSTUB_RUNTIME && <choice ESP_SYSTEM_PANIC>",
                                 "help": "Outputs the relevant registers over the serial port and immediately\nreset the processor.",
                                 "id": "ESP_SYSTEM_PANIC_PRINT_REBOOT",
                                 "name": "ESP_SYSTEM_PANIC_PRINT_REBOOT",
@@ -6859,7 +7989,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "<choice ESP_SYSTEM_PANIC>",
+                                "depends_on": "!ESP_SYSTEM_GDBSTUB_RUNTIME && <choice ESP_SYSTEM_PANIC>",
                                 "help": "Just resets the processor without outputting anything",
                                 "id": "ESP_SYSTEM_PANIC_SILENT_REBOOT",
                                 "name": "ESP_SYSTEM_PANIC_SILENT_REBOOT",
@@ -6869,22 +7999,12 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "<choice ESP_SYSTEM_PANIC>",
+                                "depends_on": "ESP_GDBSTUB_ENABLED && <choice ESP_SYSTEM_PANIC>",
                                 "help": "Invoke gdbstub on the serial port, allowing for gdb to attach to it to do a postmortem\nof the crash.",
                                 "id": "ESP_SYSTEM_PANIC_GDBSTUB",
                                 "name": "ESP_SYSTEM_PANIC_GDBSTUB",
                                 "range": null,
                                 "title": "GDBStub on panic",
-                                "type": "bool"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": "!IDF_TARGET_ESP32C2 && <choice ESP_SYSTEM_PANIC>",
-                                "help": "Invoke gdbstub on the serial port, allowing for gdb to attach to it and to do a debug on runtime.",
-                                "id": "ESP_SYSTEM_GDBSTUB_RUNTIME",
-                                "name": "ESP_SYSTEM_GDBSTUB_RUNTIME",
-                                "range": null,
-                                "title": "GDBStub at runtime",
                                 "type": "bool"
                             }
                         ],
@@ -7218,16 +8338,6 @@
                         "type": "bool"
                     },
                     {
-                        "children": [],
-                        "depends_on": null,
-                        "help": null,
-                        "id": "ESP_CONSOLE_MULTIPLE_UART",
-                        "name": "ESP_CONSOLE_MULTIPLE_UART",
-                        "range": null,
-                        "title": null,
-                        "type": "bool"
-                    },
-                    {
                         "children": [
                             {
                                 "children": [],
@@ -7250,7 +8360,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "depends_on": "ESP_CONSOLE_UART_CUSTOM && ESP_CONSOLE_MULTIPLE_UART",
+                        "depends_on": "ESP_CONSOLE_UART_CUSTOM",
                         "help": "This UART peripheral is used for console output from the ESP-IDF Bootloader and the app.\n\nIf the configuration is different in the Bootloader binary compared to the app binary, UART\nis reconfigured after the bootloader exits and the app starts.\n\nDue to an ESP32 ROM bug, UART2 is not supported for console output\nvia esp_rom_printf.",
                         "id": "component-config-esp-system-settings-uart-peripheral-to-use-for-console-output-0-1-",
                         "name": "ESP_CONSOLE_UART_NUM",
@@ -7263,6 +8373,16 @@
                         "help": null,
                         "id": "ESP_CONSOLE_UART_NUM",
                         "name": "ESP_CONSOLE_UART_NUM",
+                        "range": null,
+                        "title": null,
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "ESP_CONSOLE_ROM_SERIAL_PORT_NUM",
+                        "name": "ESP_CONSOLE_ROM_SERIAL_PORT_NUM",
                         "range": null,
                         "title": null,
                         "type": "int"
@@ -7325,7 +8445,7 @@
                             {
                                 "children": [],
                                 "depends_on": "ESP_INT_WDT",
-                                "help": "The timeout of the watchdog, in miliseconds. Make this higher than the FreeRTOS tick rate.",
+                                "help": "The timeout of the watchdog, in milliseconds. Make this higher than the FreeRTOS tick rate.",
                                 "id": "ESP_INT_WDT_TIMEOUT_MS",
                                 "name": "ESP_INT_WDT_TIMEOUT_MS",
                                 "range": [
@@ -7452,7 +8572,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "depends_on": "!IDF_TARGET_ESP32 && (ESP_SYSTEM_RTC_EXT_OSC || ESP_SYSTEM_RTC_EXT_XTAL)",
+                        "depends_on": "SOC_XT_WDT_SUPPORTED && (ESP_SYSTEM_RTC_EXT_OSC || ESP_SYSTEM_RTC_EXT_XTAL)",
                         "help": "This watchdog timer can detect oscillation failure of the XTAL32K_CLK. When such a failure\nis detected the hardware can be set up to automatically switch to BACKUP32K_CLK and generate\nan interrupt.",
                         "id": "ESP_XT_WDT",
                         "name": "ESP_XT_WDT",
@@ -7495,7 +8615,7 @@
                             {
                                 "children": [],
                                 "depends_on": "IDF_TARGET_ESP32 && <choice ESP_SYSTEM_CHECK_INT_LEVEL>",
-                                "help": "Using level 5 interrupt for Interrupt Watchdog and other system checks.",
+                                "help": "Using level 5 interrupt for Interrupt Watchdog, IPC_ISR and other system checks.",
                                 "id": "ESP_SYSTEM_CHECK_INT_LEVEL_5",
                                 "name": "ESP_SYSTEM_CHECK_INT_LEVEL_5",
                                 "range": null,
@@ -7505,7 +8625,7 @@
                             {
                                 "children": [],
                                 "depends_on": "!BTDM_CTRL_HLI && <choice ESP_SYSTEM_CHECK_INT_LEVEL>",
-                                "help": "Using level 4 interrupt for Interrupt Watchdog and other system checks.",
+                                "help": "Using level 4 interrupt for Interrupt Watchdog, IPC_ISR and other system checks.",
                                 "id": "ESP_SYSTEM_CHECK_INT_LEVEL_4",
                                 "name": "ESP_SYSTEM_CHECK_INT_LEVEL_4",
                                 "range": null,
@@ -7514,7 +8634,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "help": "Interrupt level to use for Interrupt Watchdog and other system checks.",
+                        "help": "Interrupt level to use for Interrupt Watchdog, IPC_ISR and other system checks.",
                         "id": "component-config-esp-system-settings-interrupt-level-to-use-for-interrupt-watchdog-and-other-system-checks",
                         "name": "ESP_SYSTEM_CHECK_INT_LEVEL",
                         "title": "Interrupt level to use for Interrupt Watchdog and other system checks",
@@ -7631,12 +8751,32 @@
                     },
                     {
                         "children": [],
+                        "depends_on": "SOC_ASSIST_DEBUG_SUPPORTED",
+                        "help": "This config allows to trigger a panic interrupt when Stack Pointer register goes out of allocated stack\nmemory bounds.",
+                        "id": "ESP_SYSTEM_HW_STACK_GUARD",
+                        "name": "ESP_SYSTEM_HW_STACK_GUARD",
+                        "range": null,
+                        "title": "Hardware stack guard",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
                         "depends_on": "IDF_TARGET_ESP32C2 || IDF_TARGET_ESP32S3 || IDF_TARGET_ESP32C6 || IDF_TARGET_ESP32H2",
                         "help": "This configuration helps to address an BBPLL inaccurate issue when boot from certain bootloader version,\nwhich may increase about the boot-up time by about 200 us. Disable this when your bootloader is built with\nESP-IDF version v5.2 and above.",
                         "id": "ESP_SYSTEM_BBPLL_RECALIB",
                         "name": "ESP_SYSTEM_BBPLL_RECALIB",
                         "range": null,
                         "title": "Re-calibration BBPLL at startup",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "SOC_ASSIST_DEBUG_SUPPORTED",
+                        "help": "This option will enable the PC recording function of assist_debug module. The PC value of the CPU will be\nrecorded to PC record register in assist_debug module in real time. When an exception occurs and the CPU\nis reset, this register will be kept, then we can use the recorded PC to debug the causes of the reset.",
+                        "id": "ESP_SYSTEM_HW_PC_RECORD",
+                        "name": "ESP_SYSTEM_HW_PC_RECORD",
+                        "range": null,
+                        "title": "Hardware PC recording",
                         "type": "bool"
                     }
                 ],
@@ -7673,7 +8813,7 @@
                     {
                         "children": [],
                         "depends_on": null,
-                        "help": "The IPC ISR feature is similar to the IPC feature except that the callback function is executed in the\ncontext of a High Priority Interrupt. The IPC ISR feature is itended for low latency execution of simple\ncallbacks written in assembly on another CPU. Due to being run in a High Priority Interrupt, the assembly\ncallbacks must be written with particular restrictions (see \"IPC\" and \"High-Level Interrupt\" docs for more\ndetails).",
+                        "help": "The IPC ISR feature is similar to the IPC feature except that the callback function is executed in the\ncontext of a High Priority Interrupt. The IPC ISR feature is intended for low latency execution of simple\ncallbacks written in assembly on another CPU. Due to being run in a High Priority Interrupt, the assembly\ncallbacks must be written with particular restrictions (see \"IPC\" and \"High-Level Interrupt\" docs for more\ndetails).",
                         "id": "ESP_IPC_ISR_ENABLE",
                         "name": "ESP_IPC_ISR_ENABLE",
                         "range": null,
@@ -7692,7 +8832,7 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": null,
+                                "depends_on": "!IDF_TARGET_ESP32P4",
                                 "help": "Amazon has released an SMP version of the FreeRTOS Kernel which can be found via the following link:\nhttps://github.com/FreeRTOS/FreeRTOS-Kernel/tree/smp\n\nIDF has added an experimental port of this SMP kernel located in\ncomponents/freertos/FreeRTOS-Kernel-SMP. Enabling this option will cause IDF to use the Amazon SMP\nkernel. Note that THIS FEATURE IS UNDER ACTIVE DEVELOPMENT, users use this at their own risk.\n\nLeaving this option disabled will mean the IDF FreeRTOS kernel is used instead, which is located in:\ncomponents/freertos/FreeRTOS-Kernel. Both kernel versions are SMP capable, but differ in\ntheir implementation and features.",
                                 "id": "FREERTOS_SMP",
                                 "name": "FREERTOS_SMP",
@@ -7812,9 +8952,9 @@
                             {
                                 "children": [],
                                 "depends_on": "FREERTOS_SMP",
-                                "help": "Enables the minimal idle task application hook (see configUSE_IDLE_HOOK documentation for more\ndetails).\n\nNote:\n\n- The application must provide the hook function ``void vApplicationMinimalIdleHook( void );``\n- ``vApplicationMinimalIdleHook()`` is called from FreeRTOS minimal idle task(s)",
-                                "id": "FREERTOS_USE_MINIMAL_IDLE_HOOK",
-                                "name": "FREERTOS_USE_MINIMAL_IDLE_HOOK",
+                                "help": "Enables the minimal idle task application hook (see configUSE_IDLE_HOOK documentation for more\ndetails).\n\nNote:\n\n- The application must provide the hook function ``void vApplicationPassiveIdleHook( void );``\n- ``vApplicationPassiveIdleHook()`` is called from FreeRTOS minimal idle task(s)",
+                                "id": "FREERTOS_USE_PASSIVE_IDLE_HOOK",
+                                "name": "FREERTOS_USE_PASSIVE_IDLE_HOOK",
                                 "range": null,
                                 "title": "Use FreeRTOS minimal idle hook",
                                 "type": "bool"
@@ -7844,13 +8984,73 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": null,
+                                "depends_on": "!IDF_TARGET_LINUX",
                                 "help": "Enable backward compatibility with APIs prior to FreeRTOS v8.0.0. (see\nconfigENABLE_BACKWARD_COMPATIBILITY documentation for more details).",
                                 "id": "FREERTOS_ENABLE_BACKWARD_COMPATIBILITY",
                                 "name": "FREERTOS_ENABLE_BACKWARD_COMPATIBILITY",
                                 "range": null,
                                 "title": "configENABLE_BACKWARD_COMPATIBILITY",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Sets the timer task's name (see configTIMER_SERVICE_TASK_NAME documentation for more details).",
+                                "id": "FREERTOS_TIMER_SERVICE_TASK_NAME",
+                                "name": "FREERTOS_TIMER_SERVICE_TASK_NAME",
+                                "range": null,
+                                "title": "configTIMER_SERVICE_TASK_NAME",
+                                "type": "string"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice FREERTOS_TIMER_SERVICE_TASK_CORE_AFFINITY>",
+                                        "help": null,
+                                        "id": "FREERTOS_TIMER_TASK_AFFINITY_CPU0",
+                                        "name": "FREERTOS_TIMER_TASK_AFFINITY_CPU0",
+                                        "range": null,
+                                        "title": "CPU0",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "!FREERTOS_UNICORE && <choice FREERTOS_TIMER_SERVICE_TASK_CORE_AFFINITY>",
+                                        "help": null,
+                                        "id": "FREERTOS_TIMER_TASK_AFFINITY_CPU1",
+                                        "name": "FREERTOS_TIMER_TASK_AFFINITY_CPU1",
+                                        "range": null,
+                                        "title": "CPU1",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice FREERTOS_TIMER_SERVICE_TASK_CORE_AFFINITY>",
+                                        "help": null,
+                                        "id": "FREERTOS_TIMER_TASK_NO_AFFINITY",
+                                        "name": "FREERTOS_TIMER_TASK_NO_AFFINITY",
+                                        "range": null,
+                                        "title": "No affinity",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": null,
+                                "help": "Sets the timer task's core affinity\n(see configTIMER_SERVICE_TASK_CORE_AFFINITY documentation for more details).",
+                                "id": "component-config-freertos-kernel-configtimer_service_task_core_affinity",
+                                "name": "FREERTOS_TIMER_SERVICE_TASK_CORE_AFFINITY",
+                                "title": "configTIMER_SERVICE_TASK_CORE_AFFINITY",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": null,
+                                "id": "FREERTOS_TIMER_SERVICE_TASK_CORE_AFFINITY",
+                                "name": "FREERTOS_TIMER_SERVICE_TASK_CORE_AFFINITY",
+                                "range": null,
+                                "title": null,
+                                "type": "hex"
                             },
                             {
                                 "children": [],
@@ -7920,18 +9120,7 @@
                             {
                                 "children": [
                                     {
-                                        "children": [
-                                            {
-                                                "children": [],
-                                                "depends_on": "!FREERTOS_SMP && FREERTOS_USE_STATS_FORMATTING_FUNCTIONS",
-                                                "help": "If enabled, this will include an extra column when vTaskList is called to display the CoreID the task\nis pinned to (0,1) or -1 if not pinned.",
-                                                "id": "FREERTOS_VTASKLIST_INCLUDE_COREID",
-                                                "name": "FREERTOS_VTASKLIST_INCLUDE_COREID",
-                                                "range": null,
-                                                "title": "Enable display of xCoreID in vTaskList",
-                                                "type": "bool"
-                                            }
-                                        ],
+                                        "children": [],
                                         "depends_on": "FREERTOS_USE_TRACE_FACILITY",
                                         "help": "Set configUSE_TRACE_FACILITY and configUSE_STATS_FORMATTING_FUNCTIONS to 1 to include the\n``vTaskList()`` and ``vTaskGetRunTimeStats()`` functions in the build (see\nconfigUSE_STATS_FORMATTING_FUNCTIONS documentation for more details).",
                                         "id": "FREERTOS_USE_STATS_FORMATTING_FUNCTIONS",
@@ -7951,6 +9140,57 @@
                             },
                             {
                                 "children": [],
+                                "depends_on": null,
+                                "help": "Enable list integrity checker\n(see configUSE_LIST_DATA_INTEGRITY_CHECK_BYTES documentation for more details).",
+                                "id": "FREERTOS_USE_LIST_DATA_INTEGRITY_CHECK_BYTES",
+                                "name": "FREERTOS_USE_LIST_DATA_INTEGRITY_CHECK_BYTES",
+                                "range": null,
+                                "title": "configUSE_LIST_DATA_INTEGRITY_CHECK_BYTES",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!FREERTOS_SMP && FREERTOS_USE_STATS_FORMATTING_FUNCTIONS",
+                                "help": "If enabled, this will include an extra column when vTaskList is called to display the CoreID the task\nis pinned to (0,1) or -1 if not pinned.",
+                                "id": "FREERTOS_VTASKLIST_INCLUDE_COREID",
+                                "name": "FREERTOS_VTASKLIST_INCLUDE_COREID",
+                                "range": null,
+                                "title": "Enable display of xCoreID in vTaskList",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "<choice FREERTOS_RUN_TIME_COUNTER_TYPE>",
+                                                "help": "configRUN_TIME_COUNTER_TYPE is set to uint32_t",
+                                                "id": "FREERTOS_RUN_TIME_COUNTER_TYPE_U32",
+                                                "name": "FREERTOS_RUN_TIME_COUNTER_TYPE_U32",
+                                                "range": null,
+                                                "title": "uint32_t",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "<choice FREERTOS_RUN_TIME_COUNTER_TYPE>",
+                                                "help": "configRUN_TIME_COUNTER_TYPE is set to uint64_t",
+                                                "id": "FREERTOS_RUN_TIME_COUNTER_TYPE_U64",
+                                                "name": "FREERTOS_RUN_TIME_COUNTER_TYPE_U64",
+                                                "range": null,
+                                                "title": "uint64_t",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "FREERTOS_GENERATE_RUN_TIME_STATS && !FREERTOS_SMP",
+                                        "help": "Sets the data type used for the FreeRTOS run time stats. A larger data type can be used to reduce the\nfrequency of the counter overflowing.",
+                                        "id": "component-config-freertos-kernel-configgenerate_run_time_stats-configrun_time_counter_type",
+                                        "name": "FREERTOS_RUN_TIME_COUNTER_TYPE",
+                                        "title": "configRUN_TIME_COUNTER_TYPE",
+                                        "type": "choice"
+                                    }
+                                ],
                                 "depends_on": null,
                                 "help": "Enables collection of run time statistics for each task (see configGENERATE_RUN_TIME_STATS\ndocumentation for more details).\n\nNote: The clock used for run time statistics can be configured in FREERTOS_RUN_TIME_STATS_CLK.",
                                 "id": "FREERTOS_GENERATE_RUN_TIME_STATS",
@@ -7979,6 +9219,16 @@
                                 "range": null,
                                 "title": "configUSE_TICKLESS_IDLE",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Enables task tagging functionality and its associated API (see configUSE_APPLICATION_TASK_TAG\ndocumentation for more details).",
+                                "id": "FREERTOS_USE_APPLICATION_TASK_TAG",
+                                "name": "FREERTOS_USE_APPLICATION_TASK_TAG",
+                                "range": null,
+                                "title": "configUSE_APPLICATION_TASK_TAG",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
@@ -7990,7 +9240,7 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "COMPILER_OPTIMIZATION_DEFAULT || ESP_COREDUMP_ENABLE || ESP_GDBSTUB_ENABLED",
+                                "depends_on": "COMPILER_OPTIMIZATION_DEBUG || ESP_COREDUMP_ENABLE || ESP_SYSTEM_PANIC_GDBSTUB || ESP_SYSTEM_GDBSTUB_RUNTIME",
                                 "help": "If enabled, all FreeRTOS task functions will be enclosed in a wrapper function. If a task function\nmistakenly returns (i.e. does not delete), the call flow will return to the wrapper function. The\nwrapper function will then log an error and abort the application. This option is also required for GDB\nbacktraces and C++ exceptions to work correctly inside top-level task functions.",
                                 "id": "FREERTOS_TASK_FUNCTION_WRAPPER",
                                 "name": "FREERTOS_TASK_FUNCTION_WRAPPER",
@@ -8020,12 +9270,22 @@
                             },
                             {
                                 "children": [],
+                                "depends_on": "!FREERTOS_ENABLE_STATIC_TASK_CLEAN_UP",
+                                "help": "Enable this option to make FreeRTOS call a user provided hook function right before it deletes a task\n(i.e., frees/releases a dynamically/statically allocated task's memory). This is useful if users want\nto know when a task is actually deleted (in case the task's deletion is delegated to the IDLE task).\n\nIf this config option is enabled, users must define a ``void vTaskPreDeletionHook( void * pxTCB )``\nhook function in their application.",
+                                "id": "FREERTOS_TASK_PRE_DELETION_HOOK",
+                                "name": "FREERTOS_TASK_PRE_DELETION_HOOK",
+                                "range": null,
+                                "title": "Enable task pre-deletion hook",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
                                 "depends_on": null,
-                                "help": "Enable this option to make FreeRTOS call the static task clean up hook when a task is deleted.\n\nNote: Users will need to provide a ``void vPortCleanUpTCB ( void *pxTCB )`` callback",
+                                "help": "THIS OPTION IS DEPRECATED. Use FREERTOS_TASK_PRE_DELETION_HOOK instead.\n\nEnable this option to make FreeRTOS call the static task clean up hook when a task is deleted.\n\nNote: Users will need to provide a ``void vPortCleanUpTCB ( void *pxTCB )`` callback",
                                 "id": "FREERTOS_ENABLE_STATIC_TASK_CLEAN_UP",
                                 "name": "FREERTOS_ENABLE_STATIC_TASK_CLEAN_UP",
                                 "range": null,
-                                "title": "Enable static task clean up hook",
+                                "title": "Enable static task clean up hook (DEPRECATED)",
                                 "type": "bool"
                             },
                             {
@@ -8203,16 +9463,6 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "FREERTOS_ENABLE_TASK_SNAPSHOT && !ESP_PANIC_HANDLER_IRAM",
-                                "help": "When enabled, the functions related to snapshots, such as vTaskGetSnapshot or uxTaskGetSnapshotAll,\nwill be placed in flash. Note that if enabled, these functions cannot be called when cache is disabled.",
-                                "id": "FREERTOS_PLACE_SNAPSHOT_FUNS_INTO_FLASH",
-                                "name": "FREERTOS_PLACE_SNAPSHOT_FUNS_INTO_FLASH",
-                                "range": null,
-                                "title": "Place task snapshot functions into flash",
-                                "type": "bool"
-                            },
-                            {
-                                "children": [],
                                 "depends_on": null,
                                 "help": "If enabled, context of port*_CRITICAL calls (ISR or Non-ISR) would be checked to be in compliance with\nVanilla FreeRTOS. e.g Calling port*_CRITICAL from ISR context would cause assert failure",
                                 "id": "FREERTOS_CHECK_PORT_CRITICAL_COMPLIANCE",
@@ -8220,22 +9470,22 @@
                                 "range": null,
                                 "title": "Tests compliance with Vanilla FreeRTOS port*_CRITICAL calls",
                                 "type": "bool"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": null,
-                                "help": "When enabled, the functions related to snapshots, such as vTaskGetSnapshot or uxTaskGetSnapshotAll, are\ncompiled and linked. Task snapshots are used by Task Watchdog (TWDT), GDB Stub and Core dump.",
-                                "id": "FREERTOS_ENABLE_TASK_SNAPSHOT",
-                                "name": "FREERTOS_ENABLE_TASK_SNAPSHOT",
-                                "range": null,
-                                "title": "Enable task snapshot functions",
-                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
                         "id": "component-config-freertos-port",
                         "title": "Port",
                         "type": "menu"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "FREERTOS_PORT",
+                        "name": "FREERTOS_PORT",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
                     },
                     {
                         "children": [],
@@ -8266,6 +9516,39 @@
                         "range": null,
                         "title": null,
                         "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "FREERTOS_ENABLE_TASK_SNAPSHOT",
+                        "name": "FREERTOS_ENABLE_TASK_SNAPSHOT",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "!ESP_PANIC_HANDLER_IRAM",
+                        "help": null,
+                        "id": "FREERTOS_PLACE_SNAPSHOT_FUNS_INTO_FLASH",
+                        "name": "FREERTOS_PLACE_SNAPSHOT_FUNS_INTO_FLASH",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "FREERTOS_NUMBER_OF_CORES",
+                        "name": "FREERTOS_NUMBER_OF_CORES",
+                        "range": [
+                            1,
+                            2
+                        ],
+                        "title": null,
+                        "type": "int"
                     }
                 ],
                 "depends_on": null,
@@ -8454,6 +9737,16 @@
                         "range": null,
                         "title": null,
                         "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "IDF_TARGET_ESP32H2",
+                        "help": "Enable this option to apply the countermeasure for ECDSA signature operation\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.\nThis countermeasure is only necessary for ESP32-H2 < v1.2.",
+                        "id": "HAL_ECDSA_GEN_SIG_CM",
+                        "name": "HAL_ECDSA_GEN_SIG_CM",
+                        "range": null,
+                        "title": "Enable countermeasure for ECDSA signature generation",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -8626,6 +9919,16 @@
                     {
                         "children": [],
                         "depends_on": null,
+                        "help": "Enables an additional global \"master\" log level check that occurs\nbefore a log tag cache lookup. This is useful if you want to\ncompile in a lot of logs that are selectable at runtime, but avoid the\nperformance hit during periods where you don't want log output. Examples\ninclude remote log forwarding, or disabling logs during a time-critical\nor CPU-intensive section and re-enabling them later. Results in\nlarger program size depending on number of logs compiled in.\n\nIf enabled, defaults to LOG_DEFAULT_LEVEL and can be set using\nesp_log_set_level_master().\nThis check takes precedence over ESP_LOG_LEVEL_LOCAL.",
+                        "id": "LOG_MASTER_LEVEL",
+                        "name": "LOG_MASTER_LEVEL",
+                        "range": null,
+                        "title": "Enable global master log level",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
                         "help": "Enable ANSI terminal color codes in bootloader output.\n\nIn order to view these, your terminal program must support ANSI color codes.",
                         "id": "LOG_COLORS",
                         "name": "LOG_COLORS",
@@ -8705,7 +10008,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "help": "This option allows configuring the desired line endings sent to UART\nwhen a newline ('\\n', LF) appears on stdout.\nThree options are possible:\n\nCRLF: whenever LF is encountered, prepend it with CR\n\nLF: no modification is applied, stdout is sent as is\n\nCR: each occurence of LF is replaced with CR\n\nThis option doesn't affect behavior of the UART driver (drivers/uart.h).",
+                        "help": "This option allows configuring the desired line endings sent to UART\nwhen a newline ('\\n', LF) appears on stdout.\nThree options are possible:\n\nCRLF: whenever LF is encountered, prepend it with CR\n\nLF: no modification is applied, stdout is sent as is\n\nCR: each occurrence of LF is replaced with CR\n\nThis option doesn't affect behavior of the UART driver (drivers/uart.h).",
                         "id": "component-config-newlib-line-ending-for-uart-output",
                         "name": "NEWLIB_STDOUT_LINE_ENDING",
                         "title": "Line ending for UART output",
@@ -8745,7 +10048,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "help": "This option allows configuring which input sequence on UART produces\na newline ('\\n', LF) on stdin.\nThree options are possible:\n\nCRLF: CRLF is converted to LF\n\nLF: no modification is applied, input is sent to stdin as is\n\nCR: each occurence of CR is replaced with LF\n\nThis option doesn't affect behavior of the UART driver (drivers/uart.h).",
+                        "help": "This option allows configuring which input sequence on UART produces\na newline ('\\n', LF) on stdin.\nThree options are possible:\n\nCRLF: CRLF is converted to LF\n\nLF: no modification is applied, input is sent to stdin as is\n\nCR: each occurrence of CR is replaced with LF\n\nThis option doesn't affect behavior of the UART driver (drivers/uart.h).",
                         "id": "component-config-newlib-line-ending-for-uart-input",
                         "name": "NEWLIB_STDIN_LINE_ENDING",
                         "title": "Line ending for UART input",
@@ -8754,7 +10057,7 @@
                     {
                         "children": [],
                         "depends_on": null,
-                        "help": "In most chips the ROM contains parts of newlib C library, including printf/scanf family\nof functions. These functions have been compiled with so-called \"nano\"\nformatting option. This option doesn't support 64-bit integer formats and C99\nfeatures, such as positional arguments.\n\nFor more details about \"nano\" formatting option, please see newlib readme file,\nsearch for '--enable-newlib-nano-formatted-io':\nhttps://sourceware.org/newlib/README\n\nIf this option is enabled and the ROM contains functions from newlib-nano, the build system\nwill use functions available in ROM, reducing the application binary size.\nFunctions available in ROM run faster than functions which run from flash. Functions available\nin ROM can also run when flash instruction cache is disabled.\n\nSome chips (e.g. ESP32-C6) has the full formatting versions of printf/scanf in ROM instead of\nthe nano versions and in this building with newlib nano might actually increase the size of\nthe binary. Which functions are present in ROM can be seen from ROM caps:\nESP_ROM_HAS_NEWLIB_NANO_FORMAT and ESP_ROM_HAS_NEWLIB_NORMAL_FORMAT.\n\nIf you need 64-bit integer formatting support or C99 features, keep this\noption disabled.",
+                        "help": "In most chips the ROM contains parts of newlib C library, including printf/scanf family\nof functions. These functions have been compiled with so-called \"nano\"\nformatting option. This option doesn't support 64-bit integer formats and C99\nfeatures, such as positional arguments.\n\nFor more details about \"nano\" formatting option, please see newlib readme file,\nsearch for '--enable-newlib-nano-formatted-io':\nhttps://sourceware.org/git/?p=newlib-cygwin.git;a=blob_plain;f=newlib/README;hb=HEAD\n\nIf this option is enabled and the ROM contains functions from newlib-nano, the build system\nwill use functions available in ROM, reducing the application binary size.\nFunctions available in ROM run faster than functions which run from flash. Functions available\nin ROM can also run when flash instruction cache is disabled.\n\nSome chips (e.g. ESP32-C6) has the full formatting versions of printf/scanf in ROM instead of\nthe nano versions and in this building with newlib nano might actually increase the size of\nthe binary. Which functions are present in ROM can be seen from ROM caps:\nESP_ROM_HAS_NEWLIB_NANO_FORMAT and ESP_ROM_HAS_NEWLIB_NORMAL_FORMAT.\n\nIf you need 64-bit integer formatting support or C99 features, keep this\noption disabled.",
                         "id": "NEWLIB_NANO_FORMAT",
                         "name": "NEWLIB_NANO_FORMAT",
                         "range": null,
@@ -8805,7 +10108,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "help": "This setting defines which hardware timers are used to\nimplement 'gettimeofday' and 'time' functions in C library.\n\n- If both high-resolution (systimer for all targets except ESP32)\n    and RTC timers are used, timekeeping will continue in deep sleep.\n    Time will be reported at 1 microsecond resolution.\n    This is the default, and the recommended option.\n- If only high-resolution timer (systimer) is used, gettimeofday will\n    provide time at microsecond resolution.\n    Time will not be preserved when going into deep sleep mode.\n- If only RTC timer is used, timekeeping will continue in\n    deep sleep, but time will be measured at 6.(6) microsecond\n    resolution. Also the gettimeofday function itself may take\n    longer to run.\n- If no timers are used, gettimeofday and time functions\n    return -1 and set errno to ENOSYS.\n- When RTC is used for timekeeping, two RTC_STORE registers are\n    used to keep time in deep sleep mode.",
+                        "help": "This setting defines which hardware timers are used to\nimplement 'gettimeofday' and 'time' functions in C library.\n\n- If both high-resolution (systimer for all targets except ESP32)\n    and RTC timers are used, timekeeping will continue in deep sleep.\n    Time will be reported at 1 microsecond resolution.\n    This is the default, and the recommended option.\n- If only high-resolution timer (systimer) is used, gettimeofday will\n    provide time at microsecond resolution.\n    Time will not be preserved when going into deep sleep mode.\n- If only RTC timer is used, timekeeping will continue in\n    deep sleep, but time will be measured at 6.(6) microsecond\n    resolution. Also the gettimeofday function itself may take\n    longer to run.\n- If no timers are used, gettimeofday and time functions\n    return -1 and set errno to ENOSYS; they are defined as weak,\n    so they could be overridden.\n    If you want to customize gettimeofday() and other time functions,\n    please choose this option and refer to the 'time.c' source file\n    for the exact prototypes of these functions.\n\n- When RTC is used for timekeeping, two RTC_STORE registers are\n    used to keep time in deep sleep mode.",
                         "id": "component-config-newlib-timers-used-for-gettimeofday-function",
                         "name": "NEWLIB_TIME_SYSCALL",
                         "title": "Timers used for gettimeofday function",
@@ -8816,6 +10119,16 @@
                 "id": "component-config-newlib",
                 "title": "Newlib",
                 "type": "menu"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "STDATOMIC_S32C1I_SPIRAM_WORKAROUND",
+                "name": "STDATOMIC_S32C1I_SPIRAM_WORKAROUND",
+                "range": null,
+                "title": null,
+                "type": "bool"
             },
             {
                 "children": [
@@ -8959,7 +10272,7 @@
                                     }
                                 ],
                                 "depends_on": "IDF_TARGET_ESP32S3 && !ESPTOOLPY_OCT_FLASH && !APP_BUILD_TYPE_PURE_RAM_APP",
-                                "help": "Whether the High Performance Mode of Flash is enabled. As an optional feature, user needs to manually\nenable this option as a confirmation. To be back-compatible with earlier IDF versionn, this option is\nautomatically enabled with warning when Flash running > 80Mhz.",
+                                "help": "Whether the High Performance Mode of Flash is enabled. As an optional feature, user needs to manually\nenable this option as a confirmation. To be back-compatible with earlier IDF version, this option is\nautomatically enabled with warning when Flash running > 80Mhz.",
                                 "id": "component-config-main-flash-configuration-optional-and-experimental-features-read-docs-first--high-performance-mode-read-docs-first-80mhz-",
                                 "name": "SPI_FLASH_HPM",
                                 "title": "High Performance Mode (READ DOCS FIRST, > 80MHz)",
@@ -9017,12 +10330,75 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "IDF_TARGET_ESP32C3 && !SPI_FLASH_ROM_IMPL && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "This is a helper config. Invisible for users.",
+                                "id": "SPI_FLASH_SUSPEND_QVL_SUPPORTED",
+                                "name": "SPI_FLASH_SUSPEND_QVL_SUPPORTED",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SPI_FLASH_SUSPEND_QVL_SUPPORTED && !SPI_FLASH_ROM_IMPL && !APP_BUILD_TYPE_PURE_RAM_APP",
                                 "help": "This option is disabled by default because it is supported only\nfor specific flash chips and for specific Espressif chips.\nTo evaluate if you can use this feature refer to\n`Optional Features for Flash` > `Auto Suspend & Resume` of the `ESP-IDF Programming Guide`.\n\nCAUTION: If you want to OTA to an app with this feature turned on, please make\nsure the bootloader has the support for it. (later than IDF v4.3)\n\nIf you are using an official Espressif module, please contact Espressif Business support\nto check if the module has the flash that support this feature installed.\nAlso refer to `Concurrency Constraints for Flash on SPI1` > `Flash Auto Suspend Feature`\nbefore enabling this option.",
                                 "id": "SPI_FLASH_AUTO_SUSPEND",
                                 "name": "SPI_FLASH_AUTO_SUSPEND",
                                 "range": null,
                                 "title": "Auto suspend long erase/write operations (READ DOCS FIRST)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "This config is used for setting Tsus parameter. Tsus means CS# high to next command after\nsuspend. You can refer to the chapter of AC CHARACTERISTICS of flash datasheet.",
+                                "id": "SPI_FLASH_SUSPEND_TSUS_VAL_US",
+                                "name": "SPI_FLASH_SUSPEND_TSUS_VAL_US",
+                                "range": [
+                                    20,
+                                    100
+                                ],
+                                "title": "SPI flash tSUS value (refer to chapter AC CHARACTERISTICS)",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "XMC-C series is regarded as not qualified for the Suspend feature, since its specification\nhas a tRS >= 1ms restriction. We strongly do not suggest using it for the Suspend feature.\nHowever, if your product in field has enabled this feature, you may still enable this\nconfig option to keep the legacy behavior.\n\nFor new users, DO NOT enable this config.",
+                                "id": "SPI_FLASH_FORCE_ENABLE_XMC_C_SUSPEND",
+                                "name": "SPI_FLASH_FORCE_ENABLE_XMC_C_SUSPEND",
+                                "range": null,
+                                "title": "Enable XMC-C series flash chip suspend feature anyway",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SPI_FLASH_AUTO_SUSPEND && FREERTOS_UNICORE && IDF_EXPERIMENTAL_FEATURES && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "Enable this config will disable auto-resume from hardware. Thus the software will resume the chip\nafter any higher priority task/interrupt which suspend the chip. The benefit is that the suspend-resume\nwill not disturb the higher priority task and interrupt.\n\nThis currently is only valid on single core chip.",
+                                "id": "SPI_FLASH_SOFTWARE_RESUME",
+                                "name": "SPI_FLASH_SOFTWARE_RESUME",
+                                "range": null,
+                                "title": "Resume flash program/erase form suspend state by software control",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SPI_FLASH_AUTO_SUSPEND && FREERTOS_UNICORE && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "Disable freertos task scheduler when CONFIG_SPI_FLASH_AUTO_SUSPEND is enabled.\nThus only interrupt can trigger a suspend. When SPI_FLASH_AUTO_SUSPEND is enabled,\ndefault behavior is not disable the task scheduler, so both interrupt and high priority\ntask can suspend the erase/program operation. When this option is enabled, task\nscheduler is disabled, only interrupt can suspend erase/program operation.",
+                                "id": "SPI_FLASH_DISABLE_SCHEDULER_IN_SUSPEND",
+                                "name": "SPI_FLASH_DISABLE_SCHEDULER_IN_SUSPEND",
+                                "range": null,
+                                "title": "Disable task scheduler when suspend is enabled when SPI1 operation is ongoing",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "SPI_FLASH_AUTO_SUSPEND && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "Majority flash supports to use flash register to judge if flash suspend status is\ndone or not. So enable this config, the behavior would use flash register WIP bit to judge\nwhether suspend is valid instead of waiting for a specific long time, which can save a\nlot of time and benefit for performance improvement.",
+                                "id": "SPI_FLASH_AUTO_CHECK_SUSPEND_STATUS",
+                                "name": "SPI_FLASH_AUTO_CHECK_SUSPEND_STATUS",
+                                "range": null,
+                                "title": "Check flash status automatically after flash suspend",
                                 "type": "bool"
                             }
                         ],
@@ -9184,7 +10560,7 @@
                             }
                         ],
                         "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
-                        "help": "This allows to yield the CPUs between erase commands.\nPrevents starvation of other tasks.\nPlease use this configuration together with ``SPI_FLASH_ERASE_YIELD_DURATION_MS`` and\n``SPI_FLASH_ERASE_YIELD_TICKS`` after carefully checking flash datasheet to avoid a\nwatchdog timeout.\nFor more information, please check `SPI Flash API` reference documenation\nunder section `OS Function`.",
+                        "help": "This allows to yield the CPUs between erase commands.\nPrevents starvation of other tasks.\nPlease use this configuration together with ``SPI_FLASH_ERASE_YIELD_DURATION_MS`` and\n``SPI_FLASH_ERASE_YIELD_TICKS`` after carefully checking flash datasheet to avoid a\nwatchdog timeout.\nFor more information, please check `SPI Flash API` reference documentation\nunder section `OS Function`.",
                         "id": "SPI_FLASH_YIELD_DURING_ERASE",
                         "name": "SPI_FLASH_YIELD_DURING_ERASE",
                         "range": null,
@@ -9347,7 +10723,7 @@
     {
         "children": [],
         "depends_on": null,
-        "help": "By enabling this option, ESP-IDF experimental feature options will be visible.\n\nNote you should still enable a certain experimental feature option to use it, and you\nshould read the corresponding risk warning and known issue list carefully.",
+        "help": "By enabling this option, ESP-IDF experimental feature options will be visible.\n\nNote you should still enable a certain experimental feature option to use it, and you\nshould read the corresponding risk warning and known issue list carefully.\n\nCurrent experimental feature list:\n\n- CONFIG_ESPTOOLPY_FLASHFREQ_120M && CONFIG_ESPTOOLPY_FLASH_SAMPLE_MODE_DTR\n- CONFIG_SPIRAM_SPEED_120M && CONFIG_SPIRAM_MODE_OCT\n- CONFIG_BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH\n- CONFIG_ESP_WIFI_EAP_TLS1_3\n- CONFIG_ESP_WIFI_ENABLE_ROAMING_APP\n- CONFIG_USB_HOST_EXT_PORT_SUPPORT_LS\n- CONFIG_USB_HOST_EXT_PORT_RESET_ATTEMPTS",
         "id": "IDF_EXPERIMENTAL_FEATURES",
         "name": "IDF_EXPERIMENTAL_FEATURES",
         "range": null,

@@ -5,16 +5,18 @@
 #include "esp_zigbee_core.h"
 #include <string.h>
 #include "led_driver.c"
+#include "lcd_driver.c"
 #include "data_bridge_manager.c"
 #include "SpokeManagers/iaq_manager.h"
 
 #define TAG "ASDL_ZIGBEE_COORDINATOR"
-#define MAX_DEVICES 25
-#define TIMEOUT_CHECK_INTERVAL 1    // minutes
-#define SHIPPING_INTERVAL 10         // minutes
+#define MAX_DEVICES 10
+#define TIMEOUT_CHECK_INTERVAL 0.5    // minutes    1
+#define SHIPPING_INTERVAL 1         // minutes      `10
 
 static uint16_t connected_devices[MAX_DEVICES] = {0};
-static int device_count = 0;
+int device_count = 0;
+bool iaq_network_state = true;
 
 // TODO Fix Me
 typedef enum {
@@ -89,7 +91,7 @@ static void bind_device_clusters(uint16_t short_addr, esp_zb_ieee_addr_t ieee_ad
     
     ESP_LOGI(TAG, "Bindings created. Adding device to manager.");
 
-    flash_color(0, 0, 255);
+    led_flash_color(0, 0, 255);
 
     iaq_manager_add_device(short_addr, ieee_addr);
     ESP_LOGI(TAG, "Number of IAQ devices %d", iaq_manager_get_number_of_devices());
@@ -159,7 +161,7 @@ static void monitoring_task(void *pvParameters){
     ESP_LOGI(TAG, "Starting Device Monitoring Task");
 
     while(1){
-        iaq_manager_check_device_timeouts();
+        iaq_network_state = iaq_manager_check_device_timeouts();
         vTaskDelay(pdMS_TO_TICKS(TIMEOUT_CHECK_INTERVAL * 60000));
     }
 }
@@ -350,9 +352,11 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_zb_platform_config(&config));
 
     init_uart();
+    led_init();
+    lcd_init();
     
     xTaskCreate(esp_zb_task, "Zigbee_main", 4096, NULL, 5, NULL);
-    xTaskCreate(monitoring_task, "IAQ_Monitor", 4096, NULL, 4, NULL);
+    xTaskCreate(monitoring_task, "Monitoring_Task", 4096, NULL, 4, NULL);
     xTaskCreate(keepalive_task, "Keepalive_Task", 4096, NULL, 4, NULL);
-    xTaskCreate(data_bridge_task, "Data_Bridge", 4096, NULL, 4, NULL);
+    xTaskCreate(data_bridge_task, "Data_Bridge_Task", 4096, NULL, 4, NULL);
 }

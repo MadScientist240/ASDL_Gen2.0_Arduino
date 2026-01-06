@@ -18,7 +18,7 @@ set(HEAD_HASH)
 file(READ "C:/Users/1xlr8/Desktop/ASDL/ASDL_Gen2.0_Arduino/Gen_2_Hub/Gen_2_Hub/build/bootloader/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "C:/Users/1xlr8/esp/esp-idf-v5.1.4/.git")
+set(GIT_DIR "C:/Espressif/frameworks/esp-idf-v5.3.3/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)

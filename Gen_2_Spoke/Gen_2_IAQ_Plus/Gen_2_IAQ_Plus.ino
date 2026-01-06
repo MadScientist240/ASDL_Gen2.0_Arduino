@@ -32,9 +32,10 @@ int SAMPLE_RATE = 60; // seconds
 // Sensors
 Adafruit_BMP3XX bmp388 = Adafruit_BMP3XX();
 SensirionI2cScd4x scd40;
-Adafruit_PM25AQI pm25 = Adafruit_PM25AQI();
 #define SEALEVELPRESSURE_HPA (1013.25)  // FIXME: Adjust properly
 PM25_AQI_Data data;
+Adafruit_PM25AQI pm25 = Adafruit_PM25AQI();
+HardwareSerial PMSerial(2);
 
 // SCD40
 static int16_t error;
@@ -49,8 +50,10 @@ float relativeHumidity;
  * For ESP32C6 v 1.2, pins are default to 6 and 7
  * For ESP32C6 Mini, use pins 4 and 5
  */
-#define SCL_PIN 5 // 7
-#define SDA_PIN 4 // 6
+#define SCL_PIN 7
+#define SDA_PIN 6
+#define TX_PIN 16
+#define RX_PIN 17
 #define LED_PIN 8
 #define BUTTON_PIN 9
 
@@ -67,6 +70,7 @@ static unsigned long last_hub_ping = 0;
 void setup() {
   Serial.begin(115200);
   Wire.begin(SDA_PIN, SCL_PIN);
+  PMSerial.begin(9600, SERIAL_8N1, RX_PIN, TX_PIN);
 
   neopixelWrite(LED_PIN, 0, 0, 0);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -148,18 +152,9 @@ void loop() {
 
 // Higher level
 bool globalSensorReport(){
-  readBMP();
-  readSCD();
-  readPM25();
-
-  // DUMMY DATA:
-  /*
-  zbTemperature.setTemperature(83.30);
-  zbHumidity.setAnalogInput(68.221);
-  zbCO2.setAnalogInput(242.11);
-  zbPressure.setPressure(7640);
-  zbAltitude.setAnalogInput(2000.0);
-  zbPM25.setPM25(650);*/
+  report_success = readBMP();
+  report_success = readSCD();
+  report_success = readPM25();
 
   report_success = zbTemperature.report();
   report_success = zbHumidity.reportAnalogInput();
@@ -218,7 +213,7 @@ void globalSensorInit(){
   }
 
   if(PM25_ACTIVE){
-    if(pm25.begin_I2C()){
+    if(!pm25.begin_UART(&PMSerial)){
       while (1) delay(10);
     } else {
       Serial.println("Could not find PM2.5 sensor");
@@ -307,6 +302,7 @@ bool readBMP(){
 
 bool readPM25(){
   if(!pm25.read(&data)){
+    zbPM25.setPM25(0);
     return false;
   }
   // Standard = Indoor Reporting

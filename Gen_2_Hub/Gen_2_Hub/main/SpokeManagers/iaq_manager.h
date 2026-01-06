@@ -50,7 +50,7 @@ void iaq_manager_handle_ping_response(uint16_t short_addr, bool success);
 
 void iaq_manager_send_keepalives(void);
 
-void iaq_manager_check_device_timeouts();
+bool iaq_manager_check_device_timeouts();
 
 device_info_t* iaq_manager_get_device(uint16_t short_addr);
 

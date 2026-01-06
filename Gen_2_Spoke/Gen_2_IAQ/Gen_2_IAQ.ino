@@ -44,8 +44,8 @@ float relativeHumidity;
  * For ESP32C6 v 1.2, pins are default to 6 and 7
  * For ESP32C6 Mini, use pins 4 and 5
  */
-#define SCL_PIN 5 // 7
-#define SDA_PIN 4 // 6
+#define SCL_PIN 7
+#define SDA_PIN 6
 #define LED_PIN 8
 #define BUTTON_PIN 9
 
@@ -143,14 +143,6 @@ void loop() {
 bool globalSensorReport(){
   readBMP();
   readSCD();
-
-  // DUMMY DATA:
-  /*
-  zbTemperature.setTemperature(83.30);
-  zbHumidity.setAnalogInput(68.221);
-  zbCO2.setAnalogInput(242.11);
-  zbPressure.setPressure(7640);
-  zbAltitude.setAnalogInput(2000.0);*/
 
   report_success = zbTemperature.report();
   report_success = zbHumidity.reportAnalogInput();

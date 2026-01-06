@@ -1,4 +1,14 @@
 dependencies:
+  espressif/cmake_utilities:
+    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 0.5.3
   espressif/esp-zboss-lib:
     component_hash: d862969a8276cf71e276061332d340a7b6c8bb29c4c2cf6f109c8ddd8d21c231
     dependencies:
@@ -32,12 +42,27 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.1.4
+    version: 5.3.3
+  panigrah/esp32-idf-hd44780:
+    component_hash: f5e8c25c335cd362d1ac9613138cdea7d98a4a6e272a1365b6f1117a27bfbefd
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.0'
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.0.3
 direct_dependencies:
 - espressif/esp-zboss-lib
 - espressif/esp-zigbee-lib
 - espressif/led_strip
 - idf
-manifest_hash: a422faf4146c613a73ecb6a36ee217c004c8ce376cf9813c091d9a2ae32935b4
+- panigrah/esp32-idf-hd44780
+manifest_hash: ea0ff27e2b633f35655dffea2bba742155c28bb9dc37302533b1cf574bab733d
 target: esp32c6
 version: 2.0.0
