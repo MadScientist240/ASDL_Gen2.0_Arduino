@@ -44,8 +44,8 @@ float relativeHumidity;
  * For ESP32C6 v 1.2, pins are default to 6 and 7
  * For ESP32C6 Mini, use pins 4 and 5
  */
-#define SCL_PIN 7
-#define SDA_PIN 6
+#define SCL_PIN 5
+#define SDA_PIN 4
 #define LED_PIN 8
 #define BUTTON_PIN 9
 

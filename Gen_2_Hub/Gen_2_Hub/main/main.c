@@ -157,6 +157,9 @@ static void poll_all_sensors(uint16_t short_addr)
     esp_zb_zcl_read_attr_cmd_req(&read_req);
 }
 
+/*
+ *  FreeRTOS Tasks
+ */
 static void monitoring_task(void *pvParameters){
     ESP_LOGI(TAG, "Starting Device Monitoring Task");
 
@@ -237,6 +240,8 @@ void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct)
                 esp_zb_scheduler_alarm((esp_zb_callback_t)esp_zb_bdb_start_top_level_commissioning, 
                                       ESP_ZB_BDB_MODE_NETWORK_FORMATION, 1000);
             }
+
+            esp_zb_bdb_open_network(0xFF);  // Open forever
             break;
             
         case ESP_ZB_ZDO_SIGNAL_DEVICE_ANNCE: {
@@ -355,6 +360,7 @@ void app_main(void)
     led_init();
     lcd_init();
     
+    // FIXME: Size down tasks based on size
     xTaskCreate(esp_zb_task, "Zigbee_main", 4096, NULL, 5, NULL);
     xTaskCreate(monitoring_task, "Monitoring_Task", 4096, NULL, 4, NULL);
     xTaskCreate(keepalive_task, "Keepalive_Task", 4096, NULL, 4, NULL);

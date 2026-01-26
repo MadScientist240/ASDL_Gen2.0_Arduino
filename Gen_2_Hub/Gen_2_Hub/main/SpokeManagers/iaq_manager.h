@@ -7,7 +7,8 @@
 typedef struct {
   uint16_t short_addr;
   esp_zb_ieee_addr_t ieee_addr;
-  uint32_t last_ping;
+  uint32_t last_heard;
+  uint8_t missed_handshake_count;
   bool active;
 
   float temperature;    // °C
@@ -30,11 +31,14 @@ typedef struct {
 
 #define MAX_DEVICES 10
 #define TAG "IAQ_MANAGER"
-#define DEVICE_TIMEOUT_MS (60 * 1000)
+#define DEVICE_TIMEOUT_MS (30 * 1000)
+#define MAX_MISSED_HANDSHAKE_NUM 3  // 10
 
 
 
 bool iaq_manager_add_device(uint16_t short_addr, esp_zb_ieee_addr_t ieee_addr);
+
+bool iaq_manager_remove_device(uint16_t short_addr);
 
 bool iaq_manager_check_all_endpoint_status();
 

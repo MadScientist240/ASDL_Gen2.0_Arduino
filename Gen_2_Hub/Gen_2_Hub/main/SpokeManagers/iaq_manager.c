@@ -12,19 +12,33 @@ bool iaq_manager_add_device(uint16_t short_addr, esp_zb_ieee_addr_t ieee_addr){
     if(numDevices < 10){
         if(iaq_manager_get_device(short_addr) != NULL){ // Reconnect
             devices[numDevices].active = true;
-            devices[numDevices].last_ping = pdTICKS_TO_MS(xTaskGetTickCount());
+            devices[numDevices].last_heard = pdTICKS_TO_MS(xTaskGetTickCount());
+            devices[numDevices].missed_handshake_count = 0;
             ESP_LOGI(TAG, "Device 0x%04x reconnected", short_addr);
         } else {
             devices[numDevices].short_addr = short_addr;
             memcpy(devices[numDevices].ieee_addr, ieee_addr, sizeof(esp_zb_ieee_addr_t));
             devices[numDevices].active = true;
-            devices[numDevices].last_ping = pdTICKS_TO_MS(xTaskGetTickCount());
+            devices[numDevices].last_heard = pdTICKS_TO_MS(xTaskGetTickCount());
+            devices[numDevices].missed_handshake_count = 0;
             numDevices++;
             ESP_LOGI(TAG, "Device 0x%04x added to list", short_addr);
         }
     } else {
         ESP_LOGI(TAG, "Device list is full. Cannot add more devices.");
         return false;
+    }
+    return true;
+}
+
+bool iaq_manager_remove_device(uint16_t short_addr){
+    for(int i = 0; i < numDevices; i++){
+        if((devices[i].short_addr) == (short_addr)){
+            memset(&devices[i], 0, sizeof(device_info_t));
+            numDevices--;
+        } else {
+            return false;
+        }
     }
     return true;
 }
@@ -101,7 +115,8 @@ void iaq_manager_handle_incoming_report(esp_zb_zcl_report_attr_message_t *report
         return;
     }
 
-    sender->last_ping = xTaskGetTickCount();
+    sender->last_heard = xTaskGetTickCount();
+    sender->missed_handshake_count = 0;
     
     if (report->cluster == ESP_ZB_ZCL_CLUSTER_ID_TEMP_MEASUREMENT) {
         int16_t temp_raw = *(int16_t*)report->attribute.data.value;
@@ -150,7 +165,7 @@ void iaq_manager_handle_ping_response(uint16_t short_addr, bool success) {
     for (int i = 0; i < numDevices; i++) {
         if (devices[i].short_addr == short_addr) {
             devices[i].active = success;
-            devices[i].last_ping = time(NULL);
+            devices[i].last_heard = time(NULL);
             if (success) {
                 ESP_LOGI(TAG, "Device 0x%04x successful ping", short_addr);
             } else {
@@ -192,24 +207,27 @@ void iaq_manager_send_keepalives(void) {
 
 bool iaq_manager_check_device_timeouts(){
     uint32_t now = xTaskGetTickCount();
-    bool all_endpoint_status = iaq_manager_check_all_endpoint_status();
+    bool status = true;
 
-    if(!all_endpoint_status){
-        for (int i = 0; i < numDevices; i++) {
-            if (devices[i].active && devices[i].last_ping > 0) {
-                uint32_t time_since = pdTICKS_TO_MS(now - devices[i].last_ping);
-                
-                if (time_since > DEVICE_TIMEOUT_MS) {
-                    ESP_LOGW(TAG, "Device 0x%04x timed out - no data for %lu minutes", 
-                            devices[i].short_addr, time_since / 60000);
-                    devices[i].active = false;
-                }
+    for (int i = 0; i < numDevices; i++) {
+        uint32_t time_since = pdTICKS_TO_MS(now - devices[i].last_heard);
+
+        if (time_since > DEVICE_TIMEOUT_MS) {
+            devices[i].missed_handshake_count++;
+            if(devices[i].missed_handshake_count >= MAX_MISSED_HANDSHAKE_NUM){
+                ESP_LOGW(TAG, "Device 0x%04x reached max amount of missed handshakes. Removing from registry...", devices[i].short_addr);
+                iaq_manager_remove_device(devices[i].short_addr);
+            } else {
+                ESP_LOGW(TAG, "Device 0x%04x timed out - no data for %0.1f minutes. Missed handshake %d", 
+                    devices[i].short_addr, (float)time_since / 60000, devices[i].missed_handshake_count);
+                devices[i].active = false;
             }
+            status = false;
         }
     }
 
-    ESP_LOGI(TAG, "IAQ Network Status: %s", all_endpoint_status ? "Good" : "Bad");
-    return all_endpoint_status;
+    ESP_LOGI(TAG, "IAQ Network Status: %s", status ? "Good" : "Bad");
+    return status;
 }
 
 void iaq_mgr_print_data_snapshot(){
