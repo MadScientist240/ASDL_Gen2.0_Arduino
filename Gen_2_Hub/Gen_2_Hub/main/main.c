@@ -11,8 +11,8 @@
 
 #define TAG "ASDL_ZIGBEE_COORDINATOR"
 #define MAX_DEVICES 10
-#define TIMEOUT_CHECK_INTERVAL 0.5    // minutes    1
-#define SHIPPING_INTERVAL 1         // minutes      `10
+#define TIMEOUT_CHECK_INTERVAL 1    // minutes
+#define SHIPPING_INTERVAL 10         // minutes
 
 static uint16_t connected_devices[MAX_DEVICES] = {0};
 int device_count = 0;

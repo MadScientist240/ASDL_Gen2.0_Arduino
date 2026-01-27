@@ -24,7 +24,7 @@ bool report_success = true;
 // Configuration
 bool BMP_ACTIVE = true;
 bool SCD_ACTIVE = true;
-int SAMPLE_RATE = 60; // seconds
+int SAMPLE_RATE = 300; // seconds
 
 // Sensors
 Adafruit_BMP3XX bmp388 = Adafruit_BMP3XX();

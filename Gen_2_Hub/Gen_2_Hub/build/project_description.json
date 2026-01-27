@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "Gen_2_Hub",
-    "project_version":    "62345ac-dirty",
+    "project_version":    "4880caf-dirty",
     "project_path":       "C:/Users/1xlr8/Desktop/ASDL/ASDL_Gen2.0_Arduino/Gen_2_Hub/Gen_2_Hub",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.3.3",
     "build_dir":          "C:/Users/1xlr8/Desktop/ASDL/ASDL_Gen2.0_Arduino/Gen_2_Hub/Gen_2_Hub/build",
