@@ -94,8 +94,8 @@ void iaq_manager_handle_incoming_report(esp_zb_zcl_report_attr_message_t *report
     uint8_t endpoint = report->src_endpoint;
     uint16_t short_addr = report->src_address.u.short_addr;
 
-    //ESP_LOGI(TAG, "Report from 0x%04x, attr 0x%04x", 
-    //            short_addr, report->attribute.id);
+    ESP_LOGI(TAG, "Report from 0x%04x, attr 0x%04x", 
+                short_addr, report->attribute.id);
 
     device_info_t *sender = iaq_manager_get_device(report->src_address.u.short_addr);
     

@@ -27,31 +27,7 @@ bool SCD_ACTIVE = true;
 int SAMPLE_RATE = 300; // seconds
 
 // Sensors
-Adafruit_BMP3XX bmp388 = Adafruit_BMP3XX();
-SensirionI2cScd4x scd40;
-#define SEALEVELPRESSURE_HPA (1013.25)
-
-// SCD40
-static int16_t error;
-uint64_t serialNumber = 0;
-bool dataReady = false;
-uint16_t co2Concentration;
-float temperature;
-float relativeHumidity;
-
-// IO
-/*
- * For ESP32C6 v 1.2, pins are default to 6 and 7
- * For ESP32C6 Mini, use pins 4 and 5
- */
-#define SCL_PIN 5
-#define SDA_PIN 4
-#define LED_PIN 8
-#define BUTTON_PIN 9
-
-// LED
-bool led_flashing = false;
-uint8_t led_r = 0, led_g = 0, led_b = 0;
+Adafruit_BMP3XX bmp388 = led_b = 0;
 unsigned long last_flash = 0;
 bool flash_state = false;
 
@@ -301,3 +277,28 @@ void onPingReceived(float value){
   last_hub_ping = millis();
   Serial.println("Hub Ping received!");
 }
+ Adafruit_BMP3XX();
+SensirionI2cScd4x scd40;
+#define SEALEVELPRESSURE_HPA (1013.25)
+
+// SCD40
+static int16_t error;
+uint64_t serialNumber = 0;
+bool dataReady = false;
+uint16_t co2Concentration;
+float temperature;
+float relativeHumidity;
+
+// IO
+/*
+ * For ESP32C6 v 1.2, pins are default to 6 and 7
+ * For ESP32C6 Mini, use pins 4 and 5
+ */
+#define SCL_PIN 5
+#define SDA_PIN 4
+#define LED_PIN 8
+#define BUTTON_PIN 9
+
+// LED
+bool led_flashing = false;
+uint8_t led_r = 0, led_g = 0

@@ -358,7 +358,7 @@ void app_main(void)
 
     init_uart();
     led_init();
-    lcd_init();
+    //lcd_init();
     
     // FIXME: Size down tasks based on size
     xTaskCreate(esp_zb_task, "Zigbee_main", 4096, NULL, 5, NULL);
